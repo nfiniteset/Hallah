@@ -1,0 +1,8 @@
+<template name="guestsList">
+  {{> newGuest}}
+  <ul class="list-unstyled guests">
+    {{#each guests}}
+      {{> guestItem}}
+    {{/each}}
+  </ul>
+</template>

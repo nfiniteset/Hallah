@@ -1,0 +1,10 @@
+<template name="dinnersList">
+  <a class="btn btn-default js-create-dinner">Next dinner</a>
+  <ul class="dinners list-unstyled">
+    {{#each dinners}}
+      {{> dinnerItem}}
+    {{else}}
+      <li><a class="js-create-dinner">Create your first dinner</a></li>
+    {{/each}}
+  </ul>
+</template>

@@ -1,0 +1,18 @@
+<head>
+  <title>Meteor App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+</head>
+
+<body>
+  <nav class="navbar navbar-default">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Hallah</a>
+    </div>
+    <ul class="nav navbar navbar-right">
+      <li><a href="{{pathFor 'guestsList'}}">Guests</a></li>
+      <li><a href="{{pathFor 'dinnersList'}}">Dinners</a></li>
+    </ul>
+  </nav>
+  {{yield}}
+</body>
