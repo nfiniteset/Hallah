@@ -1,4 +1,6 @@
-@Guests = new Meteor.Collection('guests')
+@Guests = new Meteor.Collection 'guests',
+  transform: (guest) ->
+    _(guest).extend fullName: "#{guest.firstName} #{guest.lastName}"
 
 Meteor.methods
   createGuest: (guestAttributes) ->

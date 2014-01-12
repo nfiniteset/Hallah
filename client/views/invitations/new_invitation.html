@@ -1,0 +1,8 @@
+<template name="newInvitation">
+  <select class="js-invite-guest">
+    <option>Invite</option>
+    {{#each invitableGuests}}
+      <option value="{{_id}}">{{fullName}}</option>
+    {{/each}}
+  </select>
+</template>

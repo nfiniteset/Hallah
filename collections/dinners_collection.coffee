@@ -1,4 +1,6 @@
-@Dinners = new Meteor.Collection('dinners')
+@Dinners = new Meteor.Collection 'dinners',
+  transform: (dinner) ->
+    _(dinner).extend(formattedDate: moment(dinner.date).format('MMM D'))
 
 followingFriday = (date) ->
   moment(date).day(12)

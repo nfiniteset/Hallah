@@ -3,3 +3,6 @@ Meteor.publish 'allDinners', ->
 
 Meteor.publish 'allGuests', ->
   Guests.find {}, { "sort": { "firstName": 1 } }
+
+Meteor.publish 'invitations', ->
+  Invitations.find()

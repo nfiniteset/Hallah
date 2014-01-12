@@ -1,12 +1,12 @@
 <template name="dinnerItem">
   <li class="dinner panel panel-default">
     <header class="panel-heading">
-      <a class="btn btn-default js-new-invitation">Invite guest</a>
+      {{> newInvitation}}
       <span class="pull-right">{{formattedDate}}</span>
     </header>
     <div class="panel-body">
       <ul class="invitations list-unstyled">
-        {{#each invitiations}}
+        {{#each invitations}}
           {{> invitationItem}}
         {{else}}
           <li><a class="js-new-invitation">Invite a guest</a></li>
