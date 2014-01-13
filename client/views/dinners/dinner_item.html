@@ -1,17 +1,24 @@
 <template name="dinnerItem">
   <li class="dinner panel panel-default">
     <header class="panel-heading">
-      {{> newInvitation}}
-      <span class="pull-right">{{formattedDate}}</span>
+      <span>{{formattedDate}}</span>
     </header>
-    <div class="panel-body">
-      <ul class="invitations list-unstyled">
+    <table class="table">
+      <thead>
+        <tr>
+          <th colspan="2"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="2">{{> newInvitation}}</td>
+        </tr>
         {{#each invitations}}
           {{> invitationItem}}
         {{else}}
-          <li><a class="js-new-invitation">Invite a guest</a></li>
+          <tr><td class="text-muted">No guests invited</td></tr>
         {{/each}}
-      </ul>
-    </div>
+      </tbody>
+    </table>
   </li>
 </template>

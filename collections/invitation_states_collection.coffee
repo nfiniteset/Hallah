@@ -1,0 +1,1 @@
+@InvitationStates = new Meteor.Collection('invitation_states')

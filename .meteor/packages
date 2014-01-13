@@ -10,3 +10,5 @@ iron-router
 coffeescript
 moment
 bootstrap-3
+select2
+npm

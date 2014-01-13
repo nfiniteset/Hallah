@@ -4,8 +4,7 @@ Template.newGuest.events
     $form = $(e.currentTarget)
 
     attrs =
-      firstName: $('[name="guest[firstName]"]').val()
-      lastName: $('[name="guest[lastName]"]').val()
+      name: $('[name="guestName"]').val()
 
     Meteor.call 'createGuest', attrs, (err, id) ->
       if (err)

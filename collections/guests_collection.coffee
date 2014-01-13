@@ -1,12 +1,12 @@
-@Guests = new Meteor.Collection 'guests',
-  transform: (guest) ->
-    _(guest).extend fullName: "#{guest.firstName} #{guest.lastName}"
+@Guests = new Meteor.Collection 'guests'
+
+Guests.allow
+  update: -> true
 
 Meteor.methods
   createGuest: (guestAttributes) ->
-    unless guestAttributes.firstName
-      throw new Meteor.Error(422, 'Please fill in a first name');
+    unless guestAttributes.name
+      throw new Meteor.Error(422, 'Please fill in a name');
 
     Guests.insert
-      firstName: guestAttributes.firstName
-      lastName: guestAttributes.lastName
+      name: guestAttributes.name

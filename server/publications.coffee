@@ -6,3 +6,6 @@ Meteor.publish 'allGuests', ->
 
 Meteor.publish 'invitations', ->
   Invitations.find()
+
+Meteor.publish 'invitationStates', ->
+  InvitationStates.find()

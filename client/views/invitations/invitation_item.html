@@ -1,3 +1,23 @@
 <template name="invitationItem">
-  <p>{{guest.fullName}}</p>
+  <tr class="{{#if editing}}hidden{{/if}}">
+    <td>
+      <button class="btn btn-link btn-xs js-edit-guest">
+        <span class="glyphicon glyphicon-edit"></span>
+      </button>
+      <b>{{guest.name}}</b>
+    </td>
+    <td>
+      <select class="js-select-invitation-state form-control input-sm pull-right">
+        {{#each invitationStates}}
+          <option value="{{index}}" {{#if selected}}selected{{/if}}>{{label}}</option>
+        {{/each}}
+        <option value="remove">Remove</option>
+      </select>
+    </td>
+  </tr>
+  <tr class="warning {{#unless editing}}hidden{{/unless}}">
+    <td colspan="3">
+      {{> editGuest guest}}
+    </td>
+  </tr>
 </template>

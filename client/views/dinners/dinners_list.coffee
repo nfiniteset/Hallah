@@ -12,7 +12,7 @@ dinnersData = [
 
 Template.dinnersList.helpers
   dinners: ->
-    Dinners.find()
+    Dinners.find({}, { sort: { "date": -1 } })
 
 Template.dinnersList.events
   'click .js-create-dinner': ->
