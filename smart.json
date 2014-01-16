@@ -4,7 +4,10 @@
     "branch": "master"
   },
   "packages": {
-    "iron-router": {},
+    "iron-router": {
+      "git": "https://github.com/EventedMind/iron-router.git",
+      "branch": "shark"
+    },
     "moment": {},
     "select2": {},
     "npm": {},
