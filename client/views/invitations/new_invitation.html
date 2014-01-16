@@ -1,6 +1,5 @@
 <template name="newInvitation">
-  <select class="js-invite-guest">
-    <option>Invite</option>
+  <select class="js-invite-guest form-control" placeholder="Invite">
     {{#each invitableGuests}}
       <option value="{{_id}}">{{name}}</option>
     {{/each}}

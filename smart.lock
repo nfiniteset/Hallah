@@ -8,9 +8,9 @@
     "basePackages": {
       "iron-router": {},
       "moment": {},
-      "bootstrap-3": {},
       "select2": {},
-      "npm": {}
+      "npm": {},
+      "bootstrap3-less": {}
     },
     "packages": {
       "iron-router": {
@@ -23,11 +23,6 @@
         "tag": "v2.2.1",
         "commit": "9ee12e714afe56b189f53076447b7b54f3012065"
       },
-      "bootstrap-3": {
-        "git": "https://github.com/mangasocial/meteor-bootstrap-3.git",
-        "tag": "v0.3.7",
-        "commit": "5dd0d142c870647b910be80bc777b96f0dd45e5e"
-      },
       "select2": {
         "git": "https://github.com/nate-strauser/meteor-select2.git",
         "tag": "v3.4.5",
@@ -37,6 +32,11 @@
         "git": "https://github.com/arunoda/meteor-npm.git",
         "tag": "v0.2.6",
         "commit": "177ab6118de5bf8cffb19481343d5762ff7a2aaf"
+      },
+      "bootstrap3-less": {
+        "git": "https://github.com/eprochasson/bootstrap3-less",
+        "tag": "v0.1.8",
+        "commit": "48b6db4435d9f01a1fcfe694a180b38e8e38835b"
       }
     }
   }

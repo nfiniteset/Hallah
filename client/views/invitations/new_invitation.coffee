@@ -12,3 +12,8 @@ Template.newInvitation.events
 
     Meteor.call 'createInvitation', invitationAttributes, (err, id) ->
       return alert(err) if err
+
+Template.newInvitation.rendered = ->
+  $(this.find('.js-invite-guest')).selectize(
+    create: true
+  ).onItemAdd( () -> )
