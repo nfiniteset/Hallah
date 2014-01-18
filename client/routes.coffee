@@ -6,8 +6,3 @@ Router.map ->
   @route 'dinnersList',
     path: '/'
     template: 'dinnersList'
-
-  @route 'guestsList',
-    path: 'guests/',
-    template: 'guestsList',
-    waitOn: -> Meteor.subscribe('allGuests')
