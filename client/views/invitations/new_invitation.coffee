@@ -7,7 +7,6 @@ _observeInvitations = ->
     added: (invite) => _buildInvitableGuestsOptions.apply(@)
     removed: (oldInvte) => _buildInvitableGuestsOptions.apply(@)
 
-
 Template.newInvitation.rendered = ->
   @selectize = _initSelectize(@)
   _buildInvitableGuestsOptions.apply(@)
@@ -19,18 +18,7 @@ _initSelectize = (template) ->
     valueField: '_id'
     labelField: 'name'
     searchField: 'name'
-    create: (input, callback) ->
-      Meteor.call 'createGuest', { name: input }, (err, id) ->
-        return alert(err) if err
-        invitationAttributes =
-          guestId: id
-          dinnerId: template.data._id
-        Meteor.call 'createInvitation', invitationAttributes, (err, id) ->
-          return alert(err) if err
-          _buildInvitableGuestsOptions.apply(template)
-          template.selectize.blur()
-
-          callback()
+    create: (name, callback) -> _createAndInviteGuest(name, template, callback)
   invitableGuestsEl[0].selectize
 
 _buildInvitableGuestsOptions = ->
@@ -52,11 +40,25 @@ Template.newInvitation.events
     guestId = $(event.currentTarget).val()
     return unless guestId
 
-    invitationAttributes =
-      guestId: guestId
-      dinnerId: instance.data._id
-
-    Meteor.call 'createInvitation', invitationAttributes, (err, id) ->
-      return alert(err) if err
-
+    _inviteGuest(guestId, instance)
     instance.selectize.clear()
+
+_createAndInviteGuest = (name, template, callback) ->
+  _createGuest name, (guestId) ->
+    _inviteGuest guestId, template ->
+      callback()
+
+_createGuest = (name, callback) ->
+  Meteor.call 'createGuest', { name: input }, (err, id) ->
+    return alert(err) if err
+    callback(id)
+
+_inviteGuest = (guestId, template) ->
+  invitationAttributes =
+    guestId: guestId
+    dinnerId: template.data._id
+
+  Meteor.call 'createInvitation', invitationAttributes, (err, id) ->
+    return alert(err) if err
+    _buildInvitableGuestsOptions.apply(template)
+    template.selectize.blur()
