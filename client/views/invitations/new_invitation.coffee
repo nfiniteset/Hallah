@@ -29,6 +29,7 @@ _initSelectize = (template) ->
           return alert(err) if err
           _buildInvitableGuestsOptions.apply(template)
           template.selectize.blur()
+
           callback()
   invitableGuestsEl[0].selectize
 
