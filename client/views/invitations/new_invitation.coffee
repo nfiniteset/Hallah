@@ -45,11 +45,11 @@ Template.newInvitation.events
 
 _createAndInviteGuest = (name, template, callback) ->
   _createGuest name, (guestId) ->
-    _inviteGuest guestId, template ->
+    _inviteGuest guestId, template, ->
       callback()
 
 _createGuest = (name, callback) ->
-  Meteor.call 'createGuest', { name: input }, (err, id) ->
+  Meteor.call 'createGuest', { name: name }, (err, id) ->
     return alert(err) if err
     callback(id)
 
