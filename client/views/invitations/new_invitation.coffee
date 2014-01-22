@@ -45,15 +45,15 @@ Template.newInvitation.events
 
 _createAndInviteGuest = (name, template, callback) ->
   _createGuest name, (guestId) ->
-    _inviteGuest guestId, template ->
+    _inviteGuest guestId, template, ->
       callback()
 
 _createGuest = (name, callback) ->
-  Meteor.call 'createGuest', { name: input }, (err, id) ->
+  Meteor.call 'createGuest', { name: name }, (err, id) ->
     return alert(err) if err
     callback(id)
 
-_inviteGuest = (guestId, template) ->
+_inviteGuest = (guestId, template, callback) ->
   invitationAttributes =
     guestId: guestId
     dinnerId: template.data._id
@@ -62,3 +62,4 @@ _inviteGuest = (guestId, template) ->
     return alert(err) if err
     _buildInvitableGuestsOptions.apply(template)
     template.selectize.blur()
+    callback()
