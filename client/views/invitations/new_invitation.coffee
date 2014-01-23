@@ -25,7 +25,7 @@ _initSelectize = (template) ->
 _buildInvitableGuestsOptions = ->
   @dinnerInvites.rewind()
   invitedGuestIds = @dinnerInvites.map (invite) -> invite.guestId
-  guests = Guests.find({ _id: { $not: { $in: invitedGuestIds }}}).fetch()
+  guests = Guests.invitable(invitedGuestIds).fetch()
 
   if @selectize?
     @selectize.clearOptions()

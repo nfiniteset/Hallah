@@ -5,6 +5,12 @@ Guests.allow
   update: (userId, guest) ->
     guest.hostId == userId
 
+Guests.invitable = (invitedGuestIds) ->
+  Guests.find({
+    _id: { $not: { $in: invitedGuestIds } },
+    $or: [ { "disabled": { $exists: false } }, { "disabled": false } ]
+    })
+
 Meteor.methods
   createGuest: (params) ->
     unless params.name
