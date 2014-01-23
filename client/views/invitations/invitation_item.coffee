@@ -3,8 +3,7 @@ Template.invitationItem.helpers
     _(Guests.findOne @guestId).extend invitationId: @_id
 
   invitationStates: ->
-    states = InvitationStates.find({}, { sort: { "priority": 1 } }).fetch()
-    _(states).map (state) =>
+    states = InvitationStates.find().map (state) =>
       state.selected = state.index == @state
       state
 

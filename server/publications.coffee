@@ -9,7 +9,7 @@ Meteor.publish 'invitations', ->
   Invitations.find({ "dinnerId": { $in: dinnerIds } })
 
 Meteor.publish 'invitationStates', ->
-  InvitationStates.find()
+  InvitationStates.find({}, { sort: { "priority": 1 } })
 
 Meteor.publish 'dietaryRestrictions', ->
   DietaryRestrictions.find()
