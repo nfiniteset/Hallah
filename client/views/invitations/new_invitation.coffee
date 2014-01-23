@@ -1,5 +1,5 @@
 Template.newInvitation.created = ->
-  @dinnerInvites = Invitations.find(dinnerId: @data._id)
+  @dinnerInvites = Invitations.find("dinnerId": @data._id)
   _observeInvitations.apply(@)
 
 _observeInvitations = ->
@@ -62,5 +62,7 @@ _inviteGuest = (guestId, template, callback) ->
   Meteor.call 'createInvitation', invitationAttributes, (err, id) ->
     return alert(err) if err
     _buildInvitableGuestsOptions.apply(template)
+    callback() if callback?
     template.selectize.clear()
-    callback()
+    template.selectize.blur()
+    template.selectize.focus()
