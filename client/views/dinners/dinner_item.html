@@ -1,13 +1,18 @@
 <template name="dinnerItem">
   <li class="dinner panel panel-default">
-    <header class="panel-heading">
+    <header class="panel-heading clearfix">
       <span class="panel-title">{{formattedDate}}</span>
+      {{#if dietaryRestrictions.count}}
+        <div class="pull-right">
+          {{#each dietaryRestrictions}}
+            <span class="badge">{{label}}</span>
+          {{/each}}
+        </div>
+      {{/if}}
     </header>
     <div class="panel-body">
-      <p>Dietary restrictions: {{dietaryRestrictions}}</p>
-
       <div class="form-group">
-        <textarea class="form-control" placeholder="Notes"></textarea>
+        <textarea class="form-control js-notes" placeholder="Notes">{{notes}}</textarea>
       </div>
     </div>
     <table class="table">

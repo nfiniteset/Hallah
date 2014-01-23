@@ -5,6 +5,10 @@ formatDate = (date) ->
   transform: (dinner) ->
     _(dinner).extend(formattedDate: formatDate(dinner.date))
 
+Dinners.allow
+  update: (dinner) ->
+    @userId == dinner.hostId
+
 Meteor.methods
   createDinner: ->
     unless Meteor.user()
