@@ -16,7 +16,11 @@
     <td>
       <select class="js-select-invitation-state form-control pull-right">
         {{#each invitationStates}}
-          <option value="{{index}}" {{#if selected}}selected{{/if}}>{{label}}</option>
+          {{#if selected}}
+            <option value="{{index}}" selected>{{label}}</option>
+          {{else}}
+            <option value="{{index}}">{{label}}</option>
+          {{/if}}
         {{/each}}
         <option value="remove">Remove</option>
       </select>
