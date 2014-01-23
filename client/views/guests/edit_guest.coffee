@@ -53,3 +53,9 @@ Template.editGuest.events
   'click .js-cancel': (event, instance) ->
     event.preventDefault()
     Session.set("editingGuest#{instance.data.invitationId}", false)
+
+  'click .js-disable-guest': (event, instance) ->
+    guestId = instance.data._id
+    Meteor.call 'disableGuest', guestId, (err, id) ->
+      alert err if err?
+      console.log('guest disabled')
