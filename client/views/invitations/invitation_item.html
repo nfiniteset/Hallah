@@ -7,7 +7,7 @@
       <b>{{guest.name}}</b>
     </td>
     <td>
-      <select class="js-select-invitation-state form-control input-sm pull-right">
+      <select class="js-select-invitation-state form-control pull-right">
         {{#each invitationStates}}
           <option value="{{index}}" {{#if selected}}selected{{/if}}>{{label}}</option>
         {{/each}}

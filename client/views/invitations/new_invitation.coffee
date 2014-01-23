@@ -18,6 +18,7 @@ _initSelectize = (template) ->
     valueField: '_id'
     labelField: 'name'
     searchField: 'name'
+    openOnFocus: false
     create: (name, callback) -> _createAndInviteGuest(name, template, callback)
   invitableGuestsEl[0].selectize
 
@@ -61,5 +62,5 @@ _inviteGuest = (guestId, template, callback) ->
   Meteor.call 'createInvitation', invitationAttributes, (err, id) ->
     return alert(err) if err
     _buildInvitableGuestsOptions.apply(template)
-    template.selectize.blur()
+    template.selectize.clear()
     callback()

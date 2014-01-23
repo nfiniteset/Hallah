@@ -10,3 +10,6 @@ Meteor.publish 'invitations', ->
 
 Meteor.publish 'invitationStates', ->
   InvitationStates.find()
+
+Meteor.publish 'dietaryRestrictions', ->
+  DietaryRestrictions.find()

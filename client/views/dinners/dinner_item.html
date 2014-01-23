@@ -1,18 +1,22 @@
 <template name="dinnerItem">
   <li class="dinner panel panel-default">
     <header class="panel-heading">
-      <span>{{formattedDate}}</span>
+      <span class="panel-title">{{formattedDate}}</span>
     </header>
+    <div class="panel-body">
+      <p>Dietary restrictions: {{dietaryRestrictions}}</p>
+
+      <div class="form-group">
+        <textarea class="form-control" placeholder="Notes"></textarea>
+      </div>
+    </div>
     <table class="table">
       <thead>
         <tr>
-          <th colspan="2"></th>
+          <td colspan="2">{{> newInvitation}}</td>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td colspan="2">{{> newInvitation}}</td>
-        </tr>
         {{#each invitations}}
           {{> invitationItem}}
         {{else}}

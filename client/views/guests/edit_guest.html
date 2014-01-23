@@ -14,13 +14,15 @@
         <label class="sr-only" for="guestName">First name</label>
       </div>
     </div>
+  </form>
+  <div class="form">
     <div class="form-group">
       <label class="sr-only">Dietary restrictions</label>
-      <input class="form-control input-sm"
-             type="text"
-             name="guestDietaryRestrictions"
-             value="{{dietaryRestrictions}}"
-             placeholder="Dietary restrictions" />
+      <select class="form-control input-sm js-select-dietary-restrictions"
+             type="select"
+             multiple="multiple"
+             name="guestDietaryRestrictionIds"
+             placeholder="Dietary restrictions"></select>
     </div>
-  </form>
+  </div>
 </template>
