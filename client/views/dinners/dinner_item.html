@@ -5,7 +5,7 @@
       {{#if dietaryRestrictions.count}}
         <div class="pull-right">
           {{#each dietaryRestrictions}}
-            <span class="badge">{{label}}</span>
+            <span class="badge {{#if unknown}}badge-danger{{/if}}">{{label}}</span>
           {{/each}}
         </div>
       {{/if}}

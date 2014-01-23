@@ -1,5 +1,12 @@
 <template name="invitationItem">
-  <tr class="{{#if editing}}hidden{{/if}}">
+  {{#if editing}}
+  <tr class="warning">
+    <td colspan="3">
+      {{> editGuest guest}}
+    </td>
+  </tr>
+  {{else}}
+  <tr>
     <td>
       <button class="btn btn-link btn-xs js-edit-guest">
         <span class="glyphicon glyphicon-edit"></span>
@@ -15,9 +22,5 @@
       </select>
     </td>
   </tr>
-  <tr class="warning {{#unless editing}}hidden{{/unless}}">
-    <td colspan="3">
-      {{> editGuest guest}}
-    </td>
-  </tr>
+  {{/if}}
 </template>

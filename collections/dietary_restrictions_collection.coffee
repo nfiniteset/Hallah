@@ -1,4 +1,12 @@
-@DietaryRestrictions = new Meteor.Collection 'dietary_restrictions'
+@UNKNOWN_RESTRICTION_LABEL = 'unknown'
+
+@DietaryRestrictions = new Meteor.Collection 'dietary_restrictions',
+  transform: (restriction) ->
+    restriction.unknown = restriction.label == UNKNOWN_RESTRICTION_LABEL
+    restriction
+
+DietaryRestrictions.unknownRestriction = ->
+  @findOne "label": UNKNOWN_RESTRICTION_LABEL
 
 Meteor.methods
   createDietaryRestriction: (params) ->

@@ -6,10 +6,14 @@ Guests.allow
     guest.hostId == userId
 
 Meteor.methods
-  createGuest: (guestAttributes) ->
-    unless guestAttributes.name
+  createGuest: (params) ->
+    unless params.name
       throw new Meteor.Error(422, 'Please fill in a name');
+
+    unless params.dietaryRestrictionIds
+      params.dietaryRestrictionIds = [DietaryRestrictions.unknownRestriction()._id]
 
     Guests.insert
       hostId: @userId
-      name: guestAttributes.name
+      name: params.name
+      dietaryRestrictionIds: params.dietaryRestrictionIds

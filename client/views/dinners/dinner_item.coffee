@@ -8,17 +8,15 @@ _dietaryRestrictions = (instance) ->
   restrictionIds = _(guests.map((guest) -> guest.dietaryRestrictionIds))
                       .chain().flatten().compact().value()
 
-  restrictionLabels = DietaryRestrictions.find(
+  DietaryRestrictions.find(
     { "_id": { "$in": restrictionIds } },
     {
-      fields: { "label": 1 }
+      fields: { "label": 1, "unknown": 1 }
     })
 
 Template.dinnerItem.helpers
   invitations: -> _invitations(@)
   dietaryRestrictions: -> _dietaryRestrictions(@)
-  dietaryRestrictionText: ->
-    _dietaryRestrictions(@).map((r) -> r.label).join(', ')
 
 Template.dinnerItem.events
   'change .js-notes': (event, instance) ->
