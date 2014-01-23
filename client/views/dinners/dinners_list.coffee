@@ -1,15 +1,3 @@
-dinnersData = [
-  {
-    date: moment().day(-5)
-  }
-  {
-    date: moment().day(-5).subtract('days', 7)
-  }
-  {
-    date: moment().day(-5).subtract('days', 14)
-  }
-]
-
 Template.dinnersList.helpers
   dinners: ->
     Dinners.find({}, { sort: { "date": -1 } })

@@ -6,13 +6,9 @@ _dietaryRestrictions = (instance) ->
   guests = Guests.find { "_id": { $in: guestIds } }
 
   restrictionIds = _(guests.map((guest) -> guest.dietaryRestrictionIds))
-                      .chain().flatten().compact().value()
+                      .chain().flatten().compact().uniq().value()
 
-  DietaryRestrictions.find(
-    { "_id": { "$in": restrictionIds } },
-    {
-      fields: { "label": 1, "unknown": 1 }
-    })
+  DietaryRestrictions.find({ "_id": { "$in": restrictionIds } })
 
 Template.dinnerItem.helpers
   invitations: -> _invitations(@)
