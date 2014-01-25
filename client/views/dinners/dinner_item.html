@@ -15,19 +15,13 @@
         <textarea class="form-control js-notes" placeholder="Notes">{{notes}}</textarea>
       </div>
     </div>
-    <table class="table">
-      <thead>
-        <tr>
-          <td colspan="2">{{> newInvitation}}</td>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each invitations}}
-          {{> invitationItem}}
-        {{else}}
-          <tr><td class="text-muted">No guests invited</td></tr>
-        {{/each}}
-      </tbody>
-    </table>
+    <ul class="list-group">
+      <li class="list-group-item">{{> newInvitation}}</li>
+      {{#each invitations}}
+        {{> invitationItem}}
+      {{else}}
+        <li class="list-group-item text-muted">No guests invited</li>
+      {{/each}}
+    </ul>
   </li>
 </template>

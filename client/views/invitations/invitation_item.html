@@ -1,30 +1,22 @@
 <template name="invitationItem">
   {{#if editing}}
-  <tr class="warning">
-    <td colspan="3">
-      {{> editGuest guest}}
-    </td>
-  </tr>
+    <li class="list-group-item">{{> editGuest guest}}</li>
   {{else}}
-  <tr>
-    <td>
-      <button class="btn btn-link btn-xs js-edit-guest">
-        <span class="glyphicon glyphicon-edit"></span>
-      </button>
+    <li class="invitation-item list-group-item {{stateClass}} clearfix">
       <b>{{guest.name}}</b>
-    </td>
-    <td>
-      <select class="js-select-invitation-state form-control pull-right">
-        {{#each invitationStates}}
-          {{#if selected}}
-            <option value="{{index}}" selected>{{label}}</option>
-          {{else}}
-            <option value="{{index}}">{{label}}</option>
-          {{/if}}
-        {{/each}}
-        <option value="remove">Remove</option>
-      </select>
-    </td>
-  </tr>
+      <button class="btn btn-link btn-xs js-edit-guest">edit</button>
+      <div class="pull-right col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <select class="js-select-invitation-state hallah-form-control">
+          {{#each invitationStates}}
+            {{#if selected}}
+              <option value="{{id}}" selected>{{label}}</option>
+            {{else}}
+              <option value="{{id}}">{{label}}</option>
+            {{/if}}
+          {{/each}}
+          <option value="remove">Remove</option>
+        </select>
+      </div>
+    </li>
   {{/if}}
 </template>
