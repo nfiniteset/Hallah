@@ -4,7 +4,7 @@ Template.invitationItem.helpers
 
   invitationStates: ->
     states = InvitationStates.find().map (state) =>
-      state.selected = state.index == @state
+      state.selected = state.id == @state
       state
 
   editing: ->

@@ -17,9 +17,9 @@
       <select class="js-select-invitation-state form-control pull-right">
         {{#each invitationStates}}
           {{#if selected}}
-            <option value="{{index}}" selected>{{label}}</option>
+            <option value="{{id}}" selected>{{label}}</option>
           {{else}}
-            <option value="{{index}}">{{label}}</option>
+            <option value="{{id}}">{{label}}</option>
           {{/if}}
         {{/each}}
         <option value="remove">Remove</option>

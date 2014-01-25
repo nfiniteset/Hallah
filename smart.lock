@@ -13,7 +13,8 @@
       "moment": {},
       "select2": {},
       "npm": {},
-      "bootstrap3-less": {}
+      "bootstrap3-less": {},
+      "migrations": {}
     },
     "packages": {
       "iron-router": {
@@ -23,8 +24,8 @@
       },
       "moment": {
         "git": "https://github.com/acreeger/meteor-moment.git",
-        "tag": "v2.2.1",
-        "commit": "9ee12e714afe56b189f53076447b7b54f3012065"
+        "tag": "v2.5.1",
+        "commit": "8c9bc5d3fc96705057737cb9743d555417f6e551"
       },
       "select2": {
         "git": "https://github.com/nate-strauser/meteor-select2.git",
@@ -40,6 +41,11 @@
         "git": "https://github.com/eprochasson/bootstrap3-less",
         "tag": "v0.1.8",
         "commit": "48b6db4435d9f01a1fcfe694a180b38e8e38835b"
+      },
+      "migrations": {
+        "git": "https://github.com/rantav/meteor-migrations.git",
+        "tag": "v0.0.2",
+        "commit": "4e75c06b8e94961567765c4dea20a007816ad274"
       }
     }
   }

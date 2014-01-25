@@ -1,10 +1,11 @@
-_invitations = (instance) ->
-  Invitations.find "dinnerId": instance._id
+_invitations = (instance, options = {}) ->
+  Invitations.find _("dinnerId": instance._id).extend(options)
 
 _dietaryRestrictions = (instance) ->
-  guestIds = _invitations(instance).map (invite) -> invite.guestId
+  expectedStateIds = InvitationStates.expectedStates().map (state) -> state.id
+  expectedInvitations = _invitations(instance, { "state": { $in: expectedStateIds } })
+  guestIds = expectedInvitations.map (invite) -> invite.guestId
   guests = Guests.find { "_id": { $in: guestIds } }
-
   restrictionIds = _(guests.map((guest) -> guest.dietaryRestrictionIds))
                       .chain().flatten().compact().uniq().value()
 
