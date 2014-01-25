@@ -10,9 +10,6 @@ states = [
 ]
 
 for state in states
-  existingState = InvitationStates.findOne(id: state.id)
-  if existingState
-    InvitationStates.update(state._id, state)
-
-unless DietaryRestrictions.unknownRestriction()
-  DietaryRestrictions.insert { "label": UNKNOWN_RESTRICTION_LABEL }
+  InvitationStates.update { "id": state.id },
+                          { $set: _(state).omit('id') },
+                          { upsert: true }
