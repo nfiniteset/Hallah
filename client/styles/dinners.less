@@ -1,0 +1,68 @@
+.dinners-list {
+  background: #00a012; /* Old browsers */
+  background: -moz-linear-gradient(-45deg,  #00a012 0%, #bdd600 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#00a012), color-stop(100%,#bdd600)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(-45deg,  #00a012 0%,#bdd600 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(-45deg,  #00a012 0%,#bdd600 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(-45deg,  #00a012 0%,#bdd600 100%); /* IE10+ */
+  background: linear-gradient(135deg,  #00a012 0%,#bdd600 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00a012', endColorstr='#bdd600',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.dinner {
+
+  &:nth-child(1),
+  &:nth-child(2) {
+    .dinner__header__background {
+      background-color: #fff;
+      opacity: .7;
+    }
+  }
+
+  &:nth-child(3) {
+    .dinner__header__background {
+      // background-color: #000;
+      // opacity: .3;
+    }
+  }
+
+  &:nth-child(4) {
+    .dinner__header__background {
+      background-color: #ccc;
+      // opacity: .3;
+    }
+  }
+}
+
+.dinner__header {
+  position: relative;
+}
+
+.dinner__header__background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  // background-color: #000;
+  // opacity: .3;
+}
+
+.dinner__body {
+  background-color: #fff;
+
+  &:after {
+    display: block;
+    height: 16px;
+
+    content: '.';
+    color: transparent;
+  }
+}
+
+.dinner__header__content {
+  position: relative;
+  z-index: 1;
+  padding: 0 32px;
+}

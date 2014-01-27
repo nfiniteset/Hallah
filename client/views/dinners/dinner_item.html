@@ -1,27 +1,30 @@
 <template name="dinnerItem">
-  <li class="dinner panel panel-default">
-    <header class="panel-heading clearfix">
-      <span class="panel-title">{{formattedDate}}</span>
-      {{#if dietaryRestrictions.count}}
-        <div class="pull-right">
-          {{#each dietaryRestrictions}}
-            <span class="badge {{#if unknown}}badge-danger{{/if}}">{{label}}</span>
-          {{/each}}
-        </div>
-      {{/if}}
+  <li class="dinner">
+    <header class="clearfix dinner__header">
+      <div class="dinner__header__background"></div>
+      <div class="dinner__header__content">
+        <h4>{{formattedDate}}</h4>
+        {{#if dietaryRestrictions.count}}
+          <div class="pull-right">
+            {{#each dietaryRestrictions}}
+              <span class="badge {{#if unknown}}badge-danger{{/if}}">{{label}}</span>
+            {{/each}}
+          </div>
+        {{/if}}
+      </div>
     </header>
-    <div class="panel-body">
+    <div class="dinner__body">
       <div class="form-group">
         <textarea class="form-control js-notes" placeholder="Notes">{{notes}}</textarea>
       </div>
+      <ul class="list-group">
+        <li class="list-group-item">{{> newInvitation}}</li>
+        {{#each invitations}}
+          {{> invitationItem}}
+        {{else}}
+          <li class="list-group-item text-muted">No guests invited</li>
+        {{/each}}
+      </ul>
     </div>
-    <ul class="list-group">
-      <li class="list-group-item">{{> newInvitation}}</li>
-      {{#each invitations}}
-        {{> invitationItem}}
-      {{else}}
-        <li class="list-group-item text-muted">No guests invited</li>
-      {{/each}}
-    </ul>
   </li>
 </template>

@@ -1,21 +1,8 @@
 <template name="dinnersList">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
-
-        <div class="form-group">
-          <a class="btn btn-default js-create-dinner control">Next dinner</a>
-        </div>
-
-        <ul class="dinners list-unstyled">
-          {{#each dinners}}
-            {{> dinnerItem}}
-          {{else}}
-            <li><a class="js-create-dinner">Create your first dinner</a></li>
-          {{/each}}
-        </ul>
-
-      </div>
-    </div>
-  </div>
+  <a class="btn btn-default js-create-dinner control">Next dinner</a>
+  <ul class="dinners-list list-unstyled">
+    {{#each dinners}}
+      {{> dinnerItem}}
+    {{/each}}
+  </ul>
 </template>
