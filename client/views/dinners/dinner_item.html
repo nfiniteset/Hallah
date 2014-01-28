@@ -1,9 +1,9 @@
 <template name="dinnerItem">
-  <li class="dinner">
+  <li class="{{classes}}">
     <header class="clearfix dinner__header">
       <div class="dinner__header__background"></div>
       <div class="dinner__header__content">
-        <h4>{{formattedDate}}</h4>
+        <h4 class="pull-left">{{formattedDate}}</h4>
         {{#if dietaryRestrictions.count}}
           <div class="pull-right">
             {{#each dietaryRestrictions}}
@@ -14,17 +14,20 @@
       </div>
     </header>
     <div class="dinner__body">
-      <div class="form-group">
-        <textarea class="form-control js-notes" placeholder="Notes">{{notes}}</textarea>
+      <div class="dinner__body__background"></div>
+      <div class="dinner__body__content">
+        <div class="form-group">
+          <textarea class="form-control js-notes" placeholder="Notes">{{notes}}</textarea>
+        </div>
+        <ul class="list-unstyled">
+          <li class="">{{> newInvitation}}</li>
+          {{#each invitations}}
+            {{> invitationItem}}
+          {{else}}
+            <li class="text-muted">No guests invited</li>
+          {{/each}}
+        </ul>
       </div>
-      <ul class="list-group">
-        <li class="list-group-item">{{> newInvitation}}</li>
-        {{#each invitations}}
-          {{> invitationItem}}
-        {{else}}
-          <li class="list-group-item text-muted">No guests invited</li>
-        {{/each}}
-      </ul>
     </div>
   </li>
 </template>

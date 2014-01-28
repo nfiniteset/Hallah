@@ -1,4 +1,4 @@
-.dinners-list {
+body {
   background: #00a012; /* Old browsers */
   background: -moz-linear-gradient(-45deg,  #00a012 0%, #bdd600 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#00a012), color-stop(100%,#bdd600)); /* Chrome,Safari4+ */
@@ -7,15 +7,15 @@
   background: -ms-linear-gradient(-45deg,  #00a012 0%,#bdd600 100%); /* IE10+ */
   background: linear-gradient(135deg,  #00a012 0%,#bdd600 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00a012', endColorstr='#bdd600',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  background-position:fixed;
 }
 
 .dinner {
-
   &:nth-child(1),
   &:nth-child(2) {
     .dinner__header__background {
       background-color: #fff;
-      opacity: .7;
+      opacity: .5;
     }
   }
 
@@ -26,31 +26,39 @@
     }
   }
 
-  &:nth-child(4) {
+  &.dinner-past {
     .dinner__header__background {
+      background-color: #666;
+      opacity: .9;
+    }
+
+    .dinner__body__background {
       background-color: #ccc;
-      // opacity: .3;
+      opacity: .9;
     }
   }
 }
 
-.dinner__header {
+.dinner__header,
+.dinner__body {
   position: relative;
 }
 
-.dinner__header__background {
+.dinner__header__background,
+.dinner__body__background {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
+}
 
-  // background-color: #000;
-  // opacity: .3;
+.dinner__header {
+  padding-top: 32px;
 }
 
 .dinner__body {
-  background-color: #fff;
+  padding-top: 16px;
 
   &:after {
     display: block;
@@ -61,7 +69,13 @@
   }
 }
 
-.dinner__header__content {
+.dinner__body__background {
+  background-color: #fff;
+  opacity: .8;
+}
+
+.dinner__header__content,
+.dinner__body__content {
   position: relative;
   z-index: 1;
   padding: 0 32px;

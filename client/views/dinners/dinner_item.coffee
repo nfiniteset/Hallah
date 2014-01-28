@@ -14,6 +14,11 @@ _dietaryRestrictions = (instance) ->
 Template.dinnerItem.helpers
   invitations: -> _invitations(@)
   dietaryRestrictions: -> _dietaryRestrictions(@)
+  classes: ->
+    classes = ['dinner']
+    if moment().isAfter(@date)
+      classes.push 'dinner-past'
+    classes.join(' ')
 
 Template.dinnerItem.events
   'change .js-notes': (event, instance) ->

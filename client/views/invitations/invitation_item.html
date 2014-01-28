@@ -1,8 +1,8 @@
 <template name="invitationItem">
   {{#if editing}}
-    <li class="list-group-item">{{> editGuest guest}}</li>
+    <li class="">{{> editGuest guest}}</li>
   {{else}}
-    <li class="invitation-item list-group-item {{stateClass}} clearfix">
+    <li class="invitation-item {{stateClass}} clearfix">
       <b>{{guest.name}}</b>
       <button class="btn btn-link btn-xs js-edit-guest">edit</button>
       <div class="pull-right col-xs-4 col-sm-4 col-md-4 col-lg-4">
