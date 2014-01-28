@@ -1,0 +1,10 @@
+{
+	"folders":
+	[
+		{
+      "folder_exclude_patterns": [".meteor"],
+      "follow_symlinks": true,
+			"path": "."
+		}
+	]
+}

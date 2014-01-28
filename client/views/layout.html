@@ -1,17 +1,13 @@
-<head>
-  <title>Meteor App</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-</head>
+<template name="layout">
+  <div class="body__background"></div>
+  <div class="body__content">
+    <nav class="navbar navbar-default">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Hallah</a>
+      </div>
+      <li>{{> loginButtons}}</li>
+    </nav>
 
-<body>
-
-  <nav class="navbar navbar-default">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Hallah</a>
-    </div>
-    <li>{{> loginButtons}}</li>
-  </nav>
-
-  {{yield}}
-</body>
+    {{> yield}}
+  </div>
+</template>
