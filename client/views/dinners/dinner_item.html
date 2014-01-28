@@ -1,7 +1,7 @@
 <template name="dinnerItem">
   <li class="{{classes}}">
     <header class="clearfix dinner__header">
-      <h4 class="pull-left">{{formattedDate}}</h4>
+      <h1 class="pull-left hallah-container">{{formattedDate}}</h1>
       {{#if dietaryRestrictions.count}}
         <div class="pull-right">
           {{#each dietaryRestrictions}}
@@ -11,10 +11,10 @@
       {{/if}}
     </header>
     <div class="dinner__body">
-      <div class="form-group">
-        <textarea class="form-control js-notes" placeholder="Notes">{{notes}}</textarea>
+      <div class="form-group hallah-container">
+        <textarea class="hallah-form-control js-notes" placeholder="Notes">{{notes}}</textarea>
       </div>
-      <ul class="list-unstyled">
+      <ul class="list-unstyled hallah-container">
         <li class="">{{> newInvitation}}</li>
         {{#each invitations}}
           {{> invitationItem}}
