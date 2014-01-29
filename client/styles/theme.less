@@ -9,21 +9,19 @@
   max-width: 960px;
   margin: 0 auto;
 }
-.jumbotron {
-  padding: 100px;
-  font-size: 17px;
-  font-weight: 200;
-  line-height: 1.5;
-  color: #ececec;
-  background-color: #715bde;
-  border-radius: 13px;
-  font-family: "Helvetica Neue Ultra Light", "Helvetica Neue", "Arial Narrow", "Arial" sans-serif;
+
+body {
+  color: white;
+  letter-spacing: 1px;
 }
 h1 {
   line-height: 1;
 }
 p {
   line-height: 1.4;
+}
+b {
+  font-weight: 300;
 }
 button {
   background: #eee;
@@ -101,13 +99,13 @@ h1 {
   height: @input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
   padding: @padding-base-vertical @padding-base-horizontal;
   font-size: @font-size-base;
+  font-weight: @font-weight-base;
   line-height: @line-height-base;
   color: @input-color;
   vertical-align: middle;
   background-color: @input-bg;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
   border: none;
-  border-top: 1px solid @input-border;
   border-radius: @input-border-radius;
   .box-shadow(none);
   .transition(~"border-color ease-in-out .15s, box-shadow ease-in-out .15s");
