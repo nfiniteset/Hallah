@@ -1,8 +1,11 @@
 @import "packages/bootstrap3-less/lib/less/bootstrap.lessimport";
-@import "selectize_variables.lessimport";
-@import "vendor/selectize.bootstrap3.lessimport";
+@import "vendor/selectize.lessimport";
+@import "selectize.hallah.lessimport";
 @import "variables.lessimport";
 @import "mixins.lessimport";
+
+@import "dinners.lessimport";
+@import "paginate-btn.lessimport";
 
 .container {
   min-width: 320px;
@@ -12,6 +15,8 @@
 
 body {
   color: white;
+
+  font-weight: 100;
   letter-spacing: 1px;
 }
 h1 {
@@ -27,9 +32,13 @@ button {
   background: #eee;
   padding: 10px 20px;
 }
+.text-muted {
+  color: rgba(255, 255, 255, .5);
+}
 
 .badge-danger {
-  background-color: #d9534f;
+  background-color: rgba(237, 42, 38, 0.7);
+  // font-weight: bold;
 }
 
 .invitation-item {
@@ -39,7 +48,7 @@ button {
 .invitation-state-declined,
 .invitation-state-canceled,
 .invitation-state-no-showed {
-  color: #ccc;
+  color: rgba(0, 0, 0, 0.65);
 }
 
 .hallah-form-control {
@@ -47,7 +56,8 @@ button {
 }
 
 .hallah-navbar {
-  margin-bottom: 64px;
+  padding: 96px 0 64px 0;
+  background-color: rgba(237, 42, 38, 0.3);
 }
 
 .hallah-navbar-brand {
@@ -106,7 +116,9 @@ h1 {
   background-color: @input-bg;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
   border: none;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: @input-border-radius;
+  margin-left: -13px;
   .box-shadow(none);
   .transition(~"border-color ease-in-out .15s, box-shadow ease-in-out .15s");
 
@@ -121,7 +133,7 @@ h1 {
   //
   // Placeholder text gets special styles because when browsers invalidate entire
   // lines if it doesn't understand a selector/
-  .placeholder();
+  .placeholder(rgba(255, 255, 255, 0.5));
 
   // Disabled and read-only inputs
   // Note: HTML5 says that controls under a fieldset > legend:first-child won't
@@ -137,5 +149,10 @@ h1 {
   // Reset height for `textarea`s
   textarea& {
     height: auto;
+    resize: none;
   }
+}
+
+.autosize-transition {
+  transition: height 0.3s ease-in-out;
 }

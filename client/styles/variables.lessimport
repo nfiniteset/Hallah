@@ -1,5 +1,13 @@
 @input-border-radius: 0;
-@input-bg: rgba(0, 0, 0, 0.1);
+@input-bg: transparent;
 @input-color: #fff;
+@input-border-focus: rgba(237, 42, 38, .6);
 @font-weight-base: 100;
 @font-size-base: 18px;
+@headings-font-weight: 100;
+
+// Badges
+// -------------------------
+@badge-bg:                    none;
+@badge-font-weight:           100;
+@badge-border-radius:         0;

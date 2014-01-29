@@ -1,8 +1,10 @@
 <template name="dinnersList">
-  <a class="btn btn-default js-create-dinner control">Next dinner</a>
   <ul class="dinners-list list-unstyled">
     {{#each dinners}}
       {{> dinnerItem}}
     {{/each}}
   </ul>
+  <a class="js-create-dinner paginate-btn">
+    <h1 class="hallah-container">Next dinner</h1>
+  </a>
 </template>

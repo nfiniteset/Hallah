@@ -1,5 +1,6 @@
-Meteor.publish 'allDinners', ->
-  Dinners.find { "hostId": @userId }, { "sort": { "date": -1 } }
+Meteor.publish 'futureDinners', ->
+  today = new Date().getTime()
+  Dinners.find { "hostId": @userId, "date": { $gt: today } }, { "sort": { "date": -1 } }
 
 Meteor.publish 'allGuests', ->
   Guests.find { "hostId": @userId }

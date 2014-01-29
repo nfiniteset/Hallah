@@ -1,9 +1,11 @@
 <template name="layout">
   <div class="body__background"></div>
   <div class="body__content">
-    <nav class="hallah-navbar hallah-container">
-      <a class="hallah-navbar-brand" href="#"><h1>Hallah</h1></a>
-      <li>{{> loginButtons}}</li>
+    <nav class="hallah-navbar">
+      <div class="hallah-container">
+        <a class="hallah-navbar-brand" href="#"><h1>Hallah</h1></a>
+        <li>{{> loginButtons}}</li>
+      </div>
     </nav>
 
     {{> yield}}

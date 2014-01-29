@@ -1,6 +1,6 @@
 Router.configure
   layoutTemplate: 'layout'
-  waitOn: -> Meteor.subscribe('allDinners')
+  waitOn: -> Meteor.subscribe('futureDinners')
 
 Router.map ->
   @route 'dinnersList',

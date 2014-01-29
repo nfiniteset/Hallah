@@ -1,3 +1,20 @@
+Template.dinnerItem.helpers
+  invitations: -> _invitations(@)
+  dietaryRestrictions: -> _dietaryRestrictions(@)
+  classes: ->
+    classes = ['dinner']
+    if moment().isAfter(@date)
+      classes.push 'dinner-past'
+    classes.join(' ')
+
+Template.dinnerItem.rendered = ->
+  _autosizeNotesField(@)
+
+Template.dinnerItem.events
+  'change .js-dinner-notes': (event, instance) ->
+    notes = $(event.currentTarget).val()
+    Dinners.update @_id, { $set: { notes: notes } }
+
 _invitations = (instance, options = {}) ->
   Invitations.find _("dinnerId": instance._id).extend(options)
 
@@ -11,16 +28,7 @@ _dietaryRestrictions = (instance) ->
 
   DietaryRestrictions.find({ "_id": { "$in": restrictionIds } })
 
-Template.dinnerItem.helpers
-  invitations: -> _invitations(@)
-  dietaryRestrictions: -> _dietaryRestrictions(@)
-  classes: ->
-    classes = ['dinner']
-    if moment().isAfter(@date)
-      classes.push 'dinner-past'
-    classes.join(' ')
+_autosizeNotesField = (instance) ->
+  notesEl = $(instance.find('.js-dinner-notes'))
+  notesEl.autosize().addClass('autosize-transition')
 
-Template.dinnerItem.events
-  'change .js-notes': (event, instance) ->
-    notes = $(event.currentTarget).val()
-    Dinners.update @_id, { $set: { notes: notes } }
