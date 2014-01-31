@@ -1,13 +1,14 @@
 @import "packages/bootstrap3-less/lib/less/bootstrap.lessimport";
 @import "vendor/selectize.lessimport";
 
-@import "layout.lessimport";
-@import "selectize.hallah.lessimport";
 @import "variables.lessimport";
 @import "mixins.lessimport";
-
-@import "dinners.lessimport";
-@import "paginate-btn.lessimport";
+@import "layout.lessimport";
+@import "modules/selectize.hallah.lessimport";
+@import "modules/modal.lessimport";
+@import "modules/dinners.lessimport";
+@import "modules/paginate-btn.lessimport";
+@import "modules/radio-list.lessimport";
 
 .container {
   min-width: 320px;
@@ -97,13 +98,43 @@ button {
 }
 
 .body__content {
+  -webkit-transition: all .15s ease-in-out;
   position: relative;
   z-index: 1;
+  margin: -5%;
 }
+
+
+// Fancy modal transition stuff
+body.foo {
+  .body__content {
+    -webkit-filter: blur(2px);
+    -webkit-transform: scale(.95, .95) translateY(-2%);
+  }
+  .hallah-modal {
+    -webkit-transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+@green-start-color: rgb(0, 141, 54);
+@green-end-color: rgb(149, 193, 31);
+@black-start-color: rgb(0, 0, 0);
+@black-end-color: rgb(50, 50, 50);
+.hallah-modal {
+  #gradient > .directional(@black-start-color, @black-end-color, 135deg);
+  .box-shadow(0 10px 16px rgba(0, 0, 0, .3));
+  -webkit-transition: all .15s ease-in-out;
+  -webkit-transform: scale(1.1, 1.1);
+  opacity: 0;
+}
+
+
 
 h1 {
   font-weight: 100 !important;
 }
+
+
 
 .hallah-form-control {
   display: block;

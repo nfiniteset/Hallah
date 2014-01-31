@@ -5,7 +5,7 @@
 @media (max-width: @screen-xs-max) {
   .hallah-container {
     width: 100%;
-    margin: 0 16px;
+    padding: 0 16px;
     min-width: 320px;
   }
 }

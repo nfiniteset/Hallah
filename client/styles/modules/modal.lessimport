@@ -1,0 +1,14 @@
+.hallah-modal {
+  position: fixed;
+  z-index: 2;
+  width: 400px;
+  top: 10%;
+  left: 50%;
+  margin-left: -200px;
+
+  background-color: black;
+}
+
+.h-modal__header {
+  padding: 16px;
+}

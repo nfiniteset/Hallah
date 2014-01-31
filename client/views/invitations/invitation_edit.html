@@ -1,0 +1,25 @@
+<template name="invitationEdit">
+  {{#with editingInvitation}}
+    <div class="hallah-modal">
+      <div class="h-modal__header">
+        {{#with dinner}}
+          <h5>{{formattedDate}}</h5>
+        {{/with}}
+        {{#with guest}}
+          <h4>{{fullName}}</h4>
+        {{/with}}
+      </div>
+      <ul class="h-radio-list">
+        {{#each states}}
+          <li>
+            <a data-id="{{id}}" class="js-set-state h-radio-list-item {{invitationStateClasses}}">
+              {{label}}
+            </a>
+          </li>
+        {{/each}}
+        <li class="h-radio-list-spacer"></li>
+        <li><a class="h-radio-list-item js-remove-invitation h-radio-list-item-danger">Remove invitation</a></li>
+      </ul>
+    </div>
+  {{/with}}
+</template>
