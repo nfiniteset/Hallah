@@ -14,7 +14,8 @@
       "select2": {},
       "npm": {},
       "bootstrap3-less": {},
-      "migrations": {}
+      "migrations": {},
+      "publish-with-relations": {}
     },
     "packages": {
       "iron-router": {
@@ -46,6 +47,11 @@
         "git": "https://github.com/rantav/meteor-migrations.git",
         "tag": "v0.0.2",
         "commit": "4e75c06b8e94961567765c4dea20a007816ad274"
+      },
+      "publish-with-relations": {
+        "git": "https://github.com/erundook/meteor-publish-with-relations.git",
+        "tag": "v0.1.5",
+        "commit": "98213e9f056b139597c99fb9ec2884ae6be76d91"
       }
     }
   }
