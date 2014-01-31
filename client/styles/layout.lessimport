@@ -1,0 +1,19 @@
+.hallah-container {
+  position: relative;
+}
+
+@media (max-width: @screen-xs-max) {
+  .hallah-container {
+    width: 100%;
+    margin: 0 16px;
+    min-width: 320px;
+  }
+}
+
+@media (min-width: @screen-sm-min) {
+  .hallah-container {
+    left: 50%;
+    margin-left: -((@screen-xs-max/2) - 8);
+    width: @screen-xs-max - 16;
+  }
+}
