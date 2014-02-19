@@ -5,16 +5,12 @@ Template.invitationItem.helpers
   guest: ->
     _(Guests.findOne @guestId).extend invitationId: @_id
 
-  invitationStates: ->
-    states = InvitationStates.find().map (state) =>
-      state.selected = state.id == @state
-      state
-
   stateLabel: ->
     invitationState(@).label
 
   stateClass: ->
-    "invitation-state-#{invitationState(@).label.toLowerCase()}"
+    label = invitationState(@).label.toLowerCase()
+    "invitation-state-#{label}"
 
   editing: ->
     !!Session.get("editingGuest#{@_id}")
@@ -22,3 +18,5 @@ Template.invitationItem.helpers
 Template.invitationItem.events
   'click .js-edit-guest': (event, instance) ->
     Session.set("editingGuest#{instance.data._id}", true)
+  'click .js-edit-invitation': (event, instance) ->
+    Session.set("editingInvitation", instance.data)

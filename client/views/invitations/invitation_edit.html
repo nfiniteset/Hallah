@@ -1,13 +1,10 @@
 <template name="invitationEdit">
   {{#with editingInvitation}}
+    <div class="hallah-modal-drop js-close-modal"></div>
     <div class="hallah-modal">
       <div class="h-modal__header">
-        {{#with dinner}}
-          <h5>{{formattedDate}}</h5>
-        {{/with}}
-        {{#with guest}}
-          <h4>{{fullName}}</h4>
-        {{/with}}
+        <h5>{{diiner.formattedDate}}</h5>
+        <h4>{{guest.fullName}}</h4>
       </div>
       <ul class="h-radio-list">
         {{#each states}}

@@ -1,3 +1,6 @@
+closeModal = ->
+  Session.set('editingInvitation', undefined)
+
 Template.invitationEdit.helpers
   states: ->
     InvitationStates.find().map (state) =>
@@ -15,14 +18,18 @@ Template.invitationEdit.helpers
 
   editingInvitation: ->
     Session.get 'editingInvitation'
-    Invitations.findOne()
 
 Template.invitationEdit.events
   'click .js-set-state': (event, instance) ->
     stateId = $(event.currentTarget).data('id').toString()
-    console.log instance
-    Invitations.update(@_id, { $set: { state: stateId } })
+    console.log instance.data
+    # Invitations.update(@_id, { $set: { state: stateId } })
+    # closeModal()
 
   'click .js-remove-invitation': (event, instance) ->
-    Invitations.remove(@_id)
-    return
+    console.log instance.data
+    # Invitations.remove(@_id)
+    # closeModal()
+
+  'click .js-close-modal': (event, instance) ->
+    closeModal()
