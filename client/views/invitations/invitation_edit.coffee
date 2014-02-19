@@ -20,16 +20,18 @@ Template.invitationEdit.helpers
     Session.get 'editingInvitation'
 
 Template.invitationEdit.events
-  'click .js-set-state': (event, instance) ->
-    stateId = $(event.currentTarget).data('id').toString()
-    console.log instance.data
-    # Invitations.update(@_id, { $set: { state: stateId } })
-    # closeModal()
+  'click .js-set-state': (event) ->
+    invitationState = @
+    invitationId = Session.get('editingInvitation')._id
 
-  'click .js-remove-invitation': (event, instance) ->
-    console.log instance.data
-    # Invitations.remove(@_id)
-    # closeModal()
+    Invitations.update(invitationId, { $set: { state: invitationState.id } })
+    closeModal()
+
+  'click .js-remove-invitation': (event) ->
+    invitationId = Session.get('editingInvitation')._id
+
+    Invitations.remove(invitationId)
+    closeModal()
 
   'click .js-close-modal': (event, instance) ->
     closeModal()
