@@ -1,170 +1,26 @@
+// Vendor
 @import "packages/bootstrap3-less/lib/less/bootstrap.lessimport";
 @import "vendor/selectize.lessimport";
 
+// Base
 @import "variables.lessimport";
+@import "base.lessimport";
+@import "typography.lessimport";
 @import "mixins.lessimport";
 @import "layout.lessimport";
+
+// Vendor configuration
 @import "modules/selectize.hallah.lessimport";
+@import "modules/autosize.lessimport";
+
+// Modules
+@import "modules/badge.lessimport";
+@import "modules/body.lessimport";
+@import "modules/form_control.lessimport";
+@import "modules/navbar.lessimport";
 @import "modules/modal.lessimport";
 @import "modules/dinners.lessimport";
+@import "modules/invitation_item.lessimport";
+@import "modules/invitation_state.lessimport";
 @import "modules/paginate-btn.lessimport";
 @import "modules/radio-list.lessimport";
-
-.container {
-  min-width: 320px;
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-body {
-  color: white;
-
-  font-weight: 100;
-  letter-spacing: 1px;
-}
-h1 {
-  line-height: 1;
-}
-p {
-  line-height: 1.4;
-}
-b {
-  font-weight: 300;
-}
-button {
-  background: #eee;
-  padding: 10px 20px;
-}
-.text-muted {
-  color: rgba(255, 255, 255, .5);
-}
-
-.badge-danger {
-  background-color: rgba(237, 42, 38, 0.7);
-  // font-weight: bold;
-}
-
-.invitation-item {
-  line-height: 34px;
-}
-
-.invitation-state-declined,
-.invitation-state-canceled,
-.invitation-state-no-showed {
-  color: rgba(0, 0, 0, 0.65);
-}
-
-.hallah-form-control {
-  width: 100%;
-}
-
-.hallah-navbar {
-  padding: 96px 0 64px 0;
-  background-color: rgba(237, 42, 38, 0.3);
-}
-
-.hallah-navbar-brand {
-  color: white;
-}
-
-.body__background {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-
-  // Green/Yellow-Green
-  // background: #00a012; /* Old browsers */
-  // background: -moz-linear-gradient(-45deg,  #00a012 0%, #bdd600 100%); /* FF3.6+ */
-  // background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#00a012), color-stop(100%,#bdd600)); /* Chrome,Safari4+ */
-  // background: -webkit-linear-gradient(-45deg,  #00a012 0%,#bdd600 100%); /* Chrome10+,Safari5.1+ */
-  // background: -o-linear-gradient(-45deg,  #00a012 0%,#bdd600 100%); /* Opera 11.10+ */
-  // background: -ms-linear-gradient(-45deg,  #00a012 0%,#bdd600 100%); /* IE10+ */
-  // background: linear-gradient(135deg,  #00a012 0%,#bdd600 100%); /* W3C */
-  // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00a012', endColorstr='#bdd600',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-  // background-position:fixed;
-
-  // Orange/Red-orange
-  background: #f9564a; /* Old browsers */
-  background: -moz-linear-gradient(-45deg,  #f9564a 0%, #ff7b0d 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#f9564a), color-stop(100%,#ff7b0d)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(-45deg,  #f9564a 0%,#ff7b0d 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(-45deg,  #f9564a 0%,#ff7b0d 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(-45deg,  #f9564a 0%,#ff7b0d 100%); /* IE10+ */
-  background: linear-gradient(135deg,  #f9564a 0%,#ff7b0d 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9564a', endColorstr='#ff7b0d',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
-}
-
-.body__content {
-  -webkit-transition: all .15s ease-in-out;
-  position: relative;
-  z-index: 1;
-  margin: -5%;
-}
-
-
-
-
-
-
-h1 {
-  font-weight: 100 !important;
-}
-
-
-
-.hallah-form-control {
-  display: block;
-  width: 100%;
-  height: @input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
-  padding: @padding-base-vertical @padding-base-horizontal;
-  font-size: @font-size-base;
-  font-weight: @font-weight-base;
-  line-height: @line-height-base;
-  color: @input-color;
-  vertical-align: middle;
-  background-color: @input-bg;
-  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-  border: none;
-  border-left: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: @input-border-radius;
-  margin-left: -13px;
-  .box-shadow(none);
-  .transition(~"border-color ease-in-out .15s, box-shadow ease-in-out .15s");
-
-  &:hover {
-    background-color: rgba(0, 0, 0, .05);
-  }
-
-  // Customize the `:focus` state to imitate native WebKit styles.
-  .hallah-form-control-focus();
-
-  // Placeholder
-  //
-  // Placeholder text gets special styles because when browsers invalidate entire
-  // lines if it doesn't understand a selector/
-  .placeholder(rgba(255, 255, 255, 0.5));
-
-  // Disabled and read-only inputs
-  // Note: HTML5 says that controls under a fieldset > legend:first-child won't
-  // be disabled if the fieldset is disabled. Due to implementation difficulty,
-  // we don't honor that edge case; we style them as disabled anyway.
-  &[disabled],
-  &[readonly],
-  fieldset[disabled] & {
-    cursor: not-allowed;
-    background-color: @input-bg-disabled;
-  }
-
-  // Reset height for `textarea`s
-  textarea& {
-    height: auto;
-    resize: none;
-  }
-}
-
-.autosize-transition {
-  transition: height 0.3s ease-in-out;
-}

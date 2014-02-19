@@ -1,0 +1,5 @@
+.invitation-state-declined,
+.invitation-state-canceled,
+.invitation-state-no-showed {
+  color: rgba(0, 0, 0, 0.65);
+}
