@@ -1,6 +1,3 @@
-closeModal = ->
-  Session.set('editingInvitation', undefined)
-
 Template.invitationEdit.helpers
   states: ->
     InvitationStates.find().map (state) =>
@@ -25,13 +22,13 @@ Template.invitationEdit.events
     invitationId = Session.get('editingInvitation')._id
 
     Invitations.update(invitationId, { $set: { state: invitationState.id } })
-    closeModal()
+    Meteor.closeModal 'editingInvitation'
 
   'click .js-remove-invitation': (event) ->
     invitationId = Session.get('editingInvitation')._id
 
     Invitations.remove(invitationId)
-    closeModal()
+    Meteor.closeModal 'editingInvitation'
 
   'click .js-close-modal': (event, instance) ->
-    closeModal()
+    Meteor.closeModal 'editingInvitation'
