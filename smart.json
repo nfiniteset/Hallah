@@ -12,6 +12,7 @@
     "select2": {},
     "npm": {},
     "bootstrap3-less": {},
-    "migrations": {}
+    "migrations": {},
+    "publish-with-relations": {}
   }
 }

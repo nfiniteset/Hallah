@@ -1,47 +1,27 @@
+// Vendor
 @import "packages/bootstrap3-less/lib/less/bootstrap.lessimport";
-@import "selectize_variables.lessimport";
-@import "vendor/selectize.bootstrap3.lessimport";
+@import "vendor/selectize.lessimport";
 
-.container {
-  min-width: 320px;
-  max-width: 960px;
-  margin: 0 auto;
-}
-.jumbotron {
-  padding: 100px;
-  font-size: 17px;
-  font-weight: 200;
-  line-height: 1.5;
-  color: #ececec;
-  background-color: #715bde;
-  border-radius: 13px;
-  font-family: "Helvetica Neue Ultra Light", "Helvetica Neue", "Arial Narrow", "Arial" sans-serif;
-}
-h1 {
-  line-height: 1;
-}
-p {
-  line-height: 1.4;
-}
-button {
-  background: #eee;
-  padding: 10px 20px;
-}
+// Base
+@import "variables.lessimport";
+@import "base.lessimport";
+@import "typography.lessimport";
+@import "mixins.lessimport";
+@import "layout.lessimport";
 
-.badge-danger {
-  background-color: #d9534f;
-}
+// Vendor configuration
+@import "modules/selectize.hallah.lessimport";
+@import "modules/autosize.lessimport";
 
-.invitation-item {
-  line-height: 34px;
-}
-
-.invitation-state-declined,
-.invitation-state-canceled,
-.invitation-state-no-showed {
-  color: #ccc;
-}
-
-.hallah-form-control {
-  width: 100%;
-}
+// Modules
+@import "modules/badge.lessimport";
+@import "modules/body.lessimport";
+@import "modules/btn.lessimport";
+@import "modules/form_control.lessimport";
+@import "modules/navbar.lessimport";
+@import "modules/modal.lessimport";
+@import "modules/dinners.lessimport";
+@import "modules/invitation_item.lessimport";
+@import "modules/invitation_state.lessimport";
+@import "modules/paginate-btn.lessimport";
+@import "modules/radio-list.lessimport";

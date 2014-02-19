@@ -1,0 +1,8 @@
+.hallah-navbar {
+  padding: 96px 0 64px 0;
+  background-color: rgba(237, 42, 38, 0.3);
+}
+
+.hallah-navbar__brand {
+  color: white;
+}

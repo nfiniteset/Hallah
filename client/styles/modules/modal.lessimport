@@ -1,0 +1,35 @@
+.hallah-modal {
+  position: absolute;
+  z-index: 3;
+  width: 320px;
+  top: 10%;
+  left: 50%;
+  margin-left: -160px;
+}
+
+.h-modal__header,
+.h-modal__body {
+  padding: 16px;
+}
+
+@green-start-color: rgb(0, 141, 54);
+@green-end-color: rgb(149, 193, 31);
+@black-start-color: rgba(0, 0, 0, .8);
+@black-end-color: rgba(50, 50, 50, .8);
+.hallah-modal {
+  background-color: rgba(0, 0, 0, 0.8);
+  .box-shadow(0 10px 16px rgba(0, 0, 0, .3));
+  -webkit-transition: all .15s ease-in-out;
+  -webkit-transform: scale(1.1, 1.1);
+  // opacity: 0;
+}
+
+.hallah-modal-drop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  background-color: rgba(255,0,0,.3);
+}

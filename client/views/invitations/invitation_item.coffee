@@ -5,29 +5,20 @@ Template.invitationItem.helpers
   guest: ->
     _(Guests.findOne @guestId).extend invitationId: @_id
 
-  invitationStates: ->
-    states = InvitationStates.find().map (state) =>
-      state.selected = state.id == @state
-      state
-
   stateLabel: ->
     invitationState(@).label
 
   stateClass: ->
-    "invitation-state-#{invitationState(@).label.toLowerCase()}"
+    label = invitationState(@).label.toLowerCase()
+    "invitation-state--#{label}"
 
   editing: ->
     !!Session.get("editingGuest#{@_id}")
 
 Template.invitationItem.events
-  'change .js-select-invitation-state': (event, instance) ->
-    stateIndex = $(event.currentTarget).val()
-
-    if stateIndex == 'remove'
-      Invitations.remove(@_id)
-      return
-
-    Invitations.update(@_id, { $set: { state: stateIndex } })
-
   'click .js-edit-guest': (event, instance) ->
-    Session.set("editingGuest#{instance.data._id}", true)
+    guest = Guests.findOne(instance.data.guestId)
+    Meteor.openModal("editingGuest", guest)
+
+  'click .js-edit-invitation': (event, instance) ->
+    Meteor.openModal("editingInvitation", instance.data)
