@@ -17,7 +17,8 @@ Template.invitationItem.helpers
 
 Template.invitationItem.events
   'click .js-edit-guest': (event, instance) ->
-    Session.set("editingGuest#{instance.data._id}", true)
+    guest = Guests.findOne(instance.data.guestId)
+    Meteor.openModal("editingGuest", guest)
 
   'click .js-edit-invitation': (event, instance) ->
     Meteor.openModal("editingInvitation", instance.data)
