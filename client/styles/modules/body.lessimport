@@ -32,5 +32,4 @@
   -webkit-transition: all .15s ease-in-out;
   position: relative;
   z-index: 1;
-  margin: -5%;
 }

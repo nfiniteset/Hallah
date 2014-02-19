@@ -1,3 +1,11 @@
 .invitation-item {
-  line-height: 34px;
+  margin-bottom: 6px;
+  line-height: 42px;
+}
+
+.invitation-item__guest-name {
+  line-height: 42px;
+}
+
+.invitation-item__invitation-state {
 }

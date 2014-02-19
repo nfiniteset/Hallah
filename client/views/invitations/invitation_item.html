@@ -2,12 +2,10 @@
   {{#if editing}}
     <li class="">{{> editGuest guest}}</li>
   {{else}}
-    <li class="invitation-item {{stateClass}} clearfix">
-      <h4 class="pull-left">{{guest.name}}
-        <a class="btn btn-link btn-xs js-edit-guest">edit</a>
-      </h4>
-      <div class="pull-right col-xs-4 col-sm-4 col-md-4 col-lg-4">
-        <h5 class="js-edit-invitation">{{stateLabel}}</h5>
+    <li class="invitation-item {{stateClass}} clearfix row">
+      <h4 class="js-edit-guest pull-left invitation-item__guest-name col-xs-6">{{guest.name}}</h4>
+      <div class="pull-right col-xs-6 col-sm-4 col-md-4 col-lg-4">
+        <h5 class="js-edit-invitation h-btn invitation-item__invitation-state">{{stateLabel}}</h5>
       </div>
     </li>
   {{/if}}
