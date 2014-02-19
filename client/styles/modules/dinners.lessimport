@@ -10,7 +10,7 @@
     background-color: transparent;
   }
 
-  &.dinner-past {
+  &.dinner--past {
     background-color: rgba(102, 102, 102, 0.25);
   }
 }
@@ -32,6 +32,6 @@
   padding: 0 32px;
 }
 
-.dinner-past {
+.dinner--past {
   display: none;
 }

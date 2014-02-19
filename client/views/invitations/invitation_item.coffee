@@ -10,7 +10,7 @@ Template.invitationItem.helpers
 
   stateClass: ->
     label = invitationState(@).label.toLowerCase()
-    "invitation-state-#{label}"
+    "invitation-state--#{label}"
 
   editing: ->
     !!Session.get("editingGuest#{@_id}")

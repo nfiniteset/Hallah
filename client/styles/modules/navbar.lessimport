@@ -3,6 +3,6 @@
   background-color: rgba(237, 42, 38, 0.3);
 }
 
-.hallah-navbar-brand {
+.hallah-navbar__brand {
   color: white;
 }

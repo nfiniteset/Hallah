@@ -9,13 +9,13 @@
       <ul class="h-radio-list">
         {{#each states}}
           <li>
-            <a data-id="{{id}}" class="js-set-state h-radio-list-item {{invitationStateClasses}}">
+            <a data-id="{{id}}" class="js-set-state h-radio-list__item {{invitationStateClasses}}">
               {{label}}
             </a>
           </li>
         {{/each}}
-        <li class="h-radio-list-spacer"></li>
-        <li><a class="h-radio-list-item js-remove-invitation h-radio-list-item-danger">Remove invitation</a></li>
+        <li class="h-radio-list__spacer"></li>
+        <li><a class="h-radio-list__item js-remove-invitation h-radio-list__item--danger">Remove invitation</a></li>
       </ul>
     </div>
   {{/with}}
