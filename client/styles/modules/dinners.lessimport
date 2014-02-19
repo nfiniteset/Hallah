@@ -9,15 +9,23 @@
   &:nth-child(1) {
     background-color: transparent;
   }
+}
 
-  &.dinner--past {
-    background-color: rgba(102, 102, 102, 0.25);
-  }
+.dinner--past {
+  background-color: rgba(102, 102, 102, 0.25);
 }
 
 .dinner__header {
   padding-top: 36px;
   color: #fff;
+}
+
+.dinner:nth-child(1) .dinner__title:before {
+  content: 'This '
+}
+
+.dinner:nth-child(2) .dinner__title:before {
+  content: 'Next '
 }
 
 .dinner__body {
