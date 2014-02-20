@@ -1,9 +1,9 @@
 <template name="dinnerItem">
   <li class="{{classes}}">
     <header class="dinner__header hallah-container">
-      <div>
+      <div class="dietary-restrictions">
         {{#each dietaryRestrictions}}
-          <span class="badge {{#if unknown}}badge--danger{{/if}}">{{label}}</span>
+          {{> dietaryRestrictionItem}}
         {{/each}}
       </div>
       <h1 class="dinner__title">{{formattedDate}}</h1>

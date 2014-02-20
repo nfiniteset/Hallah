@@ -12,8 +12,8 @@ Template.invitationItem.helpers
     label = invitationState(@).label.toLowerCase()
     "invitation-state--#{label}"
 
-  editing: ->
-    !!Session.get("editingGuest#{@_id}")
+  dietaryRestrictions: ->
+    DietaryRestrictions.find _id: { $in: @dietaryRestrictionIds }
 
 Template.invitationItem.events
   'click .js-edit-guest': (event, instance) ->

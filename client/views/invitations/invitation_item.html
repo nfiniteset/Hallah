@@ -1,12 +1,17 @@
 <template name="invitationItem">
-  {{#if editing}}
-    <li class="">{{> editGuest guest}}</li>
-  {{else}}
-    <li class="invitation-item {{stateClass}} clearfix row">
-      <h4 class="js-edit-guest pull-left invitation-item__guest-name col-xs-6">{{guest.name}}</h4>
-      <div class="pull-right col-xs-6 col-sm-4 col-md-4 col-lg-4">
-        <h5 class="js-edit-invitation h-btn invitation-item__invitation-state">{{stateLabel}}</h5>
-      </div>
-    </li>
-  {{/if}}
+  <li class="invitation-item {{stateClass}} clearfix row">
+    <div class="pull-left col-xs-6 invitation-item__guest-info js-edit-guest">
+      {{#with guest}}
+        <h4 class="invitation-item__guest-name">{{fullName}}</h4>
+        <div class="invitation-item__dietary-restrictions dietary-restrictions">
+          {{#each dietaryRestrictions}}
+            {{> dietaryRestrictionItem}}
+          {{/each}}
+        </div>
+      {{/with}}
+    </div>
+    <div class="pull-right col-xs-6 col-sm-4 col-md-4 col-lg-4">
+      <h5 class="js-edit-invitation h-btn invitation-item__invitation-state">{{stateLabel}}</h5>
+    </div>
+  </li>
 </template>

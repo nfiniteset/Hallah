@@ -1,11 +1,20 @@
 .invitation-item {
   margin-bottom: 6px;
-  line-height: 42px;
+}
+
+.invitation-item__guest-info {
+  margin-bottom: 6px;
+
+  cursor: pointer;
 }
 
 .invitation-item__guest-name {
-  line-height: 42px;
+  margin-bottom: 0;
 }
 
 .invitation-item__invitation-state {
+}
+
+.invitation-item__dietary-restrictions {
+  opacity: .7;
 }
