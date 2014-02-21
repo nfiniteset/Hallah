@@ -1,11 +1,11 @@
 Meteor.publish 'futureDinners', ->
-  today = new Date().getTime()
+  today = moment().startOf('day').toDate().getTime()
   Meteor.publishWithRelations
     handle: @
     collection: Dinners
     filter:
       "hostId": @userId
-      "date": { $gt: today }
+      "date": { $gte: today }
     options:
       sort: { "date": -1 }
     mappings: [

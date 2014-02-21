@@ -3,7 +3,7 @@ Template.dinnerItem.helpers
   dietaryRestrictions: -> _dietaryRestrictions(@)
   classes: ->
     classes = ['dinner']
-    if moment().isAfter(@date)
+    if moment().startOf('day').isAfter(@date)
       classes.push 'dinner--past'
     classes.join(' ')
 
