@@ -9,10 +9,10 @@ accounts-password
 iron-router
 coffeescript
 moment
-select2
 npm
 less
-bootstrap3-less
 accounts-ui
 migrations
 publish-with-relations
+blaze-layout
+bootstrap3-less

@@ -1,47 +1,33 @@
 {
-  "meteor": {
-    "git": "https://github.com/meteor/meteor.git",
-    "branch": "master",
-    "commit": "cbde5bd4875524f3ade7f3baef417a43ec1b9474"
-  },
+  "meteor": {},
   "dependencies": {
     "basePackages": {
       "iron-router": {
         "git": "https://github.com/EventedMind/iron-router.git",
-        "branch": "shark"
+        "branch": "blaze-integration"
       },
       "moment": {},
-      "select2": {},
       "npm": {},
-      "bootstrap3-less": {},
       "migrations": {},
-      "publish-with-relations": {}
+      "publish-with-relations": {},
+      "blaze-layout": {},
+      "bootstrap3-less": {}
     },
     "packages": {
       "iron-router": {
         "git": "https://github.com/EventedMind/iron-router.git",
-        "branch": "shark",
-        "commit": "4f55d0acc293abb4a9492229e8d2be0ec0e176c1"
+        "branch": "blaze-integration",
+        "commit": "6fd133401bb6de65a30ba148f7d61ea1b4dc9b43"
       },
       "moment": {
         "git": "https://github.com/acreeger/meteor-moment.git",
         "tag": "v2.5.1",
         "commit": "8c9bc5d3fc96705057737cb9743d555417f6e551"
       },
-      "select2": {
-        "git": "https://github.com/nate-strauser/meteor-select2.git",
-        "tag": "v3.4.5",
-        "commit": "4a8d05582b949a14f0ee217c185166abbf112822"
-      },
       "npm": {
         "git": "https://github.com/arunoda/meteor-npm.git",
         "tag": "v0.2.6",
         "commit": "177ab6118de5bf8cffb19481343d5762ff7a2aaf"
-      },
-      "bootstrap3-less": {
-        "git": "https://github.com/eprochasson/bootstrap3-less",
-        "tag": "v0.1.8",
-        "commit": "48b6db4435d9f01a1fcfe694a180b38e8e38835b"
       },
       "migrations": {
         "git": "https://github.com/rantav/meteor-migrations.git",
@@ -52,6 +38,16 @@
         "git": "https://github.com/erundook/meteor-publish-with-relations.git",
         "tag": "v0.1.5",
         "commit": "98213e9f056b139597c99fb9ec2884ae6be76d91"
+      },
+      "blaze-layout": {
+        "git": "https://github.com/EventedMind/blaze-layout.git",
+        "tag": "v0.0.1",
+        "commit": "fa631b7b192618e8690d43f0033a3f4c7f77fa1d"
+      },
+      "bootstrap3-less": {
+        "git": "https://github.com/eprochasson/bootstrap3-less",
+        "tag": "v0.1.9",
+        "commit": "5c812c4d7ce72917a065f0424c3cf54e5ff2d16a"
       }
     }
   }

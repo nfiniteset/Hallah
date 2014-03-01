@@ -1,18 +1,14 @@
 {
-  "meteor": {
-    "git": "https://github.com/meteor/meteor.git",
-    "branch": "master"
-  },
   "packages": {
     "iron-router": {
       "git": "https://github.com/EventedMind/iron-router.git",
-      "branch": "shark"
+      "branch": "blaze-integration"
     },
     "moment": {},
-    "select2": {},
     "npm": {},
-    "bootstrap3-less": {},
     "migrations": {},
-    "publish-with-relations": {}
+    "publish-with-relations": {},
+    "blaze-layout": {},
+    "bootstrap3-less": {}
   }
 }
