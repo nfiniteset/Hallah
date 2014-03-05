@@ -11,7 +11,6 @@ coffeescript
 moment
 npm
 less
-accounts-ui
 migrations
 publish-with-relations
 blaze-layout

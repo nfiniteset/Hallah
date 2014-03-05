@@ -3,8 +3,11 @@
   <div class="body__content">
     <nav class="hallah-navbar">
       <div class="hallah-container">
+        <p>{{current_user.email}}</p>
+        <a>Sign out</a>
+      </div>
+      <div class="hallah-container">
         <a class="hallah-navbar__brand" href="#"><h1>Hallah</h1></a>
-        <li>{{> loginButtons}}</li>
       </div>
     </nav>
     {{> yield}}
