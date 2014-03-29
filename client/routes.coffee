@@ -3,12 +3,21 @@ Router.configure
   waitOn: -> Meteor.subscribe('futureDinners')
 
 Router.map ->
+  @route 'home',
+    action: ->
+      @redirect 'dinnersList'
   @route 'dinnersList',
     path: '/'
     template: 'dinnersList'
   @route 'newSession',
     path: '/sign_in'
     template: 'newSession'
+  @route 'destroySession',
+    path: '/sign_out'
+    action: ->
+      Meteor.logout()
+      @redirect 'newSession'
+
 
 requireLogin = (pause) ->
   if Meteor.loggingIn()

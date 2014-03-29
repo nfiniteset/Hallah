@@ -9,6 +9,6 @@ Template.newSession.events
       if (err)
         console.log('Error signing in')
       else
-        Router.render('dinnersList')
+        Router.go 'home'
 
     return false;
