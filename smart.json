@@ -8,7 +8,10 @@
     "npm": {},
     "migrations": {},
     "publish-with-relations": {},
-    "blaze-layout": {},
-    "bootstrap3-less": {}
+    "bootstrap3-less": {},
+    "blaze-layout": {
+      "git": "https://github.com/EventedMind/blaze-layout.git",
+      "branch": "devel"
+    }
   }
 }

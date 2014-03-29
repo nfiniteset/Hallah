@@ -6,12 +6,11 @@
 standard-app-packages
 accounts-base
 accounts-password
-iron-router
 coffeescript
 moment
 npm
 less
 migrations
 publish-with-relations
-blaze-layout
 bootstrap3-less
+iron-router

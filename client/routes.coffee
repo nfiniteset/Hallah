@@ -10,10 +10,11 @@ Router.map ->
     path: '/sign_in'
     template: 'newSession'
 
-requireLogin = ->
-  unless Meteor.user()
-    console.log 'User not signed in. Redirecting to sign in screen.'
+requireLogin = (pause) ->
+  if Meteor.loggingIn()
+    return pause()
+  else unless Meteor.user()
     @render 'newSession'
-    @pause()
+    pause()
 
-Router.before(requireLogin);
+Router.onBeforeAction(requireLogin);
