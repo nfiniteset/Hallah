@@ -5,6 +5,10 @@ body {
   letter-spacing: 1px;
 }
 
+html, body {
+  background: #ff7b0d;
+}
+
 h1 {
   line-height: 1;
   font-weight: 100;
