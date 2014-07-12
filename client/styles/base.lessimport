@@ -26,3 +26,13 @@ button {
   background: #eee;
   padding: 10px 20px;
 }
+
+a {
+  color: white;
+
+  &:hover {
+    color: white;
+    color: rgba(0,0,0,.4);
+    text-decoration: none;
+  }
+}

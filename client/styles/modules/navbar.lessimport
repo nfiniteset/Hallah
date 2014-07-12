@@ -6,3 +6,32 @@
 .hallah-navbar__brand {
   color: white;
 }
+
+.hallah-navbar__session {
+  float: right;
+  font-size: @font-size-small;
+}
+
+.hallah-navbar__session__current-user-label {
+}
+
+.hallah-navbar__session__sign-out-btn {
+  display: block;
+  color: rgba(255,255,255,0.5);
+}
+
+.hallah-navbar__links {
+  list-style: none;
+  padding: 0;
+  .clearfix;
+
+  & > li {
+    float: left;
+    margin-right: 15px;
+
+    & > a {
+      display: block;
+
+    }
+  }
+}
