@@ -16,7 +16,7 @@ Meteor.methods
 
     latestDinner = Dinners.findOne({ hostId: @userId }, { sort: { date: -1 } })
     today = new Date
-    latestDinnerDate = if latestDinner && latestDinner > today
+    latestDinnerDate = if latestDinner && latestDinner.date > today
       latestDinner.date
     else
        today
