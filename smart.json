@@ -1,17 +1,10 @@
 {
   "packages": {
-    "iron-router": {
-      "git": "https://github.com/EventedMind/iron-router.git",
-      "branch": "blaze-integration"
-    },
+    "iron-router": {},
     "moment": {},
     "npm": {},
     "migrations": {},
     "publish-with-relations": {},
-    "bootstrap3-less": {},
-    "blaze-layout": {
-      "git": "https://github.com/EventedMind/blaze-layout.git",
-      "branch": "devel"
-    }
+    "bootstrap3-less": {}
   }
 }
