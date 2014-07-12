@@ -1,0 +1,11 @@
+<template name="navbar">
+  <nav class="hallah-navbar">
+    <div class="hallah-container">
+      <p>{{currentUserLabel}}</p>
+      <a href="{{pathFor 'destroySession'}}">Sign out</a>
+    </div>
+    <div class="hallah-container">
+      <a class="hallah-navbar__brand" href="/"><h1>Hallah</h1></a>
+    </div>
+  </nav>
+</template>
