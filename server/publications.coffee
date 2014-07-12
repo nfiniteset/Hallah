@@ -17,24 +17,37 @@ Meteor.publish 'futureDinners', ->
     ]
 
 Meteor.publish 'allGuests', ->
-  Guests.find { "hostId": @userId }
-
-Meteor.publish 'allInvitations', ->
   Meteor.publishWithRelations
     handle: @
-    collection: Invitations
+    collection: Guests
     filter:
       "hostId": @userId
-    mappings: [
-      {
-        collection: Guests
+    mappings: [{
+        collection: Invitations
         key: 'guestId'
-      }
-      {
-        collection: Dinners
-        key: 'dinnerId'
-      }
-    ]
+        reverse: true
+        mappings: [{
+          key: 'dinnerId'
+          collection: Dinners
+        }]
+      }]
+
+# Meteor.publish 'allInvitations', ->
+#   Meteor.publishWithRelations
+#     handle: @
+#     collection: Invitations
+#     filter:
+#       "hostId": @userId
+#     mappings: [
+#       {
+#         collection: Guests
+#         key: 'guestId'
+#       }
+#       {
+#         collection: Dinners
+#         key: 'dinnerId'
+#       }
+#     ]
 
 Meteor.publish 'invitationStates', ->
   InvitationStates.find({}, { sort: { "priority": 1 } })

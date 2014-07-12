@@ -11,6 +11,9 @@ Handlebars.registerHelper "debug", (optionalValue) ->
 Handlebars.registerHelper "formatDate", (date) ->
   Meteor.formatDate date
 
+Handlebars.registerHelper "year", (date) ->
+  moment(date).format('YYYY')
+
 Handlebars.registerHelper "currentUserLabel", ->
   currentUser = Meteor.user()
   return unless currentUser
