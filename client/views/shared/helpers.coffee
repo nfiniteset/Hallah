@@ -7,3 +7,11 @@ Handlebars.registerHelper "debug", (optionalValue) ->
     console.log("Value")
     console.log("====================")
     console.log(optionalValue)
+
+Handlebars.registerHelper "formatDate", (date) ->
+  Meteor.formatDate date
+
+Handlebars.registerHelper "currentUserLabel", ->
+  currentUser = Meteor.user()
+  return unless currentUser
+  currentUser.emails[0].address

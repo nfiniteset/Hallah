@@ -1,0 +1,14 @@
+<template name="guestItem">
+  <div class="guest-item">
+    <div class="hallah-container">
+      <h3>{{name}}</h3>
+      <p>
+        {{#if lastInvited}}
+          Last invited: {{formatDate lastInvited}}
+        {{else}}
+          Never invited
+        {{/if}}
+      </p>
+    </div>
+  </div>
+</template>
