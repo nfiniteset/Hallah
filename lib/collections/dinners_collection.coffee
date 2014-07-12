@@ -1,9 +1,4 @@
-formatDate = (date) ->
-  moment(date).format('dddd MMMM D')
-
-@Dinners = new Meteor.Collection 'dinners',
-  transform: (dinner) ->
-    _(dinner).extend(formattedDate: formatDate(dinner.date))
+@Dinners = new Meteor.Collection 'dinners'
 
 Dinners.allow
   update: (dinner) ->

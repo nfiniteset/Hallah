@@ -7,3 +7,6 @@ Handlebars.registerHelper "debug", (optionalValue) ->
     console.log("Value")
     console.log("====================")
     console.log(optionalValue)
+
+Handlebars.registerHelper "formatDate", (date) ->
+  Meteor.formatDate date
