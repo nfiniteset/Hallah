@@ -12,6 +12,7 @@ Router.map ->
   @route 'guestsList',
     path: '/guests',
     template: 'guestsList'
+    waitOn: -> Meteor.subscribe('allInvitations')
   @route 'newSession',
     path: '/sign_in'
     template: 'newSession'
