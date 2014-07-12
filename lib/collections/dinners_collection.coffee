@@ -15,7 +15,11 @@ Meteor.methods
       throw new Meteor.Error(422, 'You must be signed in to create a dinner')
 
     latestDinner = Dinners.findOne({ hostId: @userId }, { sort: { date: -1 } })
-    latestDinnerDate = if latestDinner then latestDinner.date else new Date
+    today = new Date
+    latestDinnerDate = if latestDinner && latestDinner > today
+      latestDinner.date
+    else
+       today
 
     Dinners.insert
       hostId: @userId
