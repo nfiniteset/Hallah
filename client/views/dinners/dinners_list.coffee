@@ -1,6 +1,7 @@
 Template.dinnersList.helpers
   dinners: ->
-    Dinners.find({}, { sort: { "date": 1 } })
+    today = moment().startOf('day').toDate().getTime()
+    Dinners.find({"date": { $gte: today }}, { sort: { "date": 1 } })
 
 Template.dinnersList.events
   'click .js-create-dinner': ->

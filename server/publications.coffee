@@ -32,23 +32,6 @@ Meteor.publish 'allGuests', ->
         }]
       }]
 
-# Meteor.publish 'allInvitations', ->
-#   Meteor.publishWithRelations
-#     handle: @
-#     collection: Invitations
-#     filter:
-#       "hostId": @userId
-#     mappings: [
-#       {
-#         collection: Guests
-#         key: 'guestId'
-#       }
-#       {
-#         collection: Dinners
-#         key: 'dinnerId'
-#       }
-#     ]
-
 Meteor.publish 'invitationStates', ->
   InvitationStates.find({}, { sort: { "priority": 1 } })
 
