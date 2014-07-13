@@ -9,6 +9,9 @@ Router.map ->
   @route 'dinnersList',
     path: '/'
     template: 'dinnersList'
+  @route 'dinnersPastList',
+    path: '/history'
+    template: 'dinnersPastList'
   @route 'guestsList',
     path: '/guests',
     template: 'guestsList'

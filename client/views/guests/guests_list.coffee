@@ -1,3 +1,3 @@
 Template.guestsList.helpers
   guests: ->
-    Guests.find()
+    Guests.find({}, {sort: {"name": 1}})
