@@ -2,6 +2,11 @@
   <div class="guest-item">
     <div class="hallah-container">
       <h3>{{name}}</h3>
+      <ul class="guest-item__history">
+        {{#each invitations}}
+          <li class="guest-item__history-item guest-item__history-item--{{invitationStateCodeFor state}}">|</li>
+        {{/each}}
+      </ul>
       <p>
         {{#if lastInvited}}
           Last invited: {{formatDate lastInvited}}, {{year lastInvited}}

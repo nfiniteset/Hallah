@@ -1,3 +1,31 @@
 .guest-item {
   border-bottom: 1px solid rgba(237, 42, 38, 0.3);
 }
+
+.guest-item__history {
+  float: right;
+  padding: 0;
+  list-style: none;
+  cursor: default;
+}
+
+.guest-item__history-item {
+  display: inline;
+}
+
+.guest-item__history-item--invited,
+.guest-item__history-item--accepted,
+.guest-item__history-item--tentative,
+.guest-item__history-item--confirmed {
+  color: rgba(255,255,255,0.4);
+}
+.guest-item__history-item--declined {
+  display: none;
+}
+.guest-item__history-item--canceled,
+.guest-item__history-item--no-showed {
+  color: rgba(0,0,0,0.8);
+}
+.guest-item__history-item--showed {
+  color: rgba(255,255,255,1);
+}
