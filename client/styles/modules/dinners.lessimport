@@ -1,14 +1,16 @@
-.dinners-list {
-  margin: 0;
+.dinners-list,
+.dinners-past-list {
+  padding: 0;
+  list-style: none;
 }
 
 .dinner {
   margin-bottom: 1px;
   background-color: rgba(255, 255, 255, .1);
+}
 
-  &:nth-child(1) {
-    background-color: transparent;
-  }
+.dinners-list > .dinner:nth-child(1) {
+  background-color: transparent;
 }
 
 .dinner--past {
@@ -20,11 +22,11 @@
   color: #fff;
 }
 
-.dinner:nth-child(1) .dinner__title:before {
+.dinners-list > .dinner:nth-child(1) .dinner__title:before {
   content: 'This '
 }
 
-.dinner:nth-child(2) .dinner__title:before {
+.dinners-list > .dinner:nth-child(2) .dinner__title:before {
   content: 'Next '
 }
 
