@@ -18,3 +18,9 @@ Handlebars.registerHelper "currentUserLabel", ->
   currentUser = Meteor.user()
   return unless currentUser
   currentUser.emails[0].address
+
+Handlebars.registerHelper "invitationStateCodeFor", (stateId) ->
+  InvitationStates.codeFor(stateId)
+
+Handlebars.registerHelper "invitationStateLabelFor", (stateId) ->
+  InvitationStates.labelFor(stateId)

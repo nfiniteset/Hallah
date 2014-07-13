@@ -1,15 +1,9 @@
-invitationState = (instance) ->
-  InvitationStates.findOne("id": instance.state)
-
 Template.invitationItem.helpers
   guest: ->
     _(Guests.findOne @guestId).extend invitationId: @_id
 
-  stateLabel: ->
-    invitationState(@).label
-
   stateClass: ->
-    label = invitationState(@).label.toLowerCase()
+    label = InvitationStates.codeFor(@state)
     "invitation-state--#{label}"
 
   dietaryRestrictions: ->
