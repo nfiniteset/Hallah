@@ -14,7 +14,7 @@
 }
 
 .dinner--past {
-  background-color: rgba(102, 102, 102, 0.25);
+  background-color: rgba(0, 0, 0, 0.35);
 }
 
 .dinner__header {

@@ -35,3 +35,9 @@
     }
   }
 }
+
+ @media (max-width: 640px) {
+    .hallah-navbar__links > li {
+      float: none;
+   }
+}
