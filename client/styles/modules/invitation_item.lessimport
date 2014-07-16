@@ -9,7 +9,13 @@
 }
 
 .invitation-item__guest-name {
+  padding-top: 0;
+  padding-bottom: 0;
   margin-bottom: 0;
+
+  font-size: 31px;
+  line-height: 31px;
+  font-weight: 100;
 }
 
 .invitation-item__invitation-state {

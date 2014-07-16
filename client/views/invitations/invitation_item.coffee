@@ -16,3 +16,8 @@ Template.invitationItem.events
 
   'click .js-edit-invitation': (event, instance) ->
     Meteor.openModal("editingInvitation", instance.data)
+
+  'change .js-guest-name': (event, instance) ->
+    name = $(event.currentTarget).val()
+    Guests.update @_id, { $set: { name: name } }
+

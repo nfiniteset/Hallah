@@ -1,9 +1,9 @@
 <template name="invitationItem">
   <li class="invitation-item {{stateClass}} clearfix row">
-    <div class="pull-left col-xs-6 invitation-item__guest-info js-edit-guest">
+    <div class="pull-left col-xs-6 invitation-item__guest-info">
       {{#with guest}}
-        <h4 class="invitation-item__guest-name">{{fullName}}</h4>
-        <div class="invitation-item__dietary-restrictions dietary-restrictions">
+        <input class="hallah-form-control invitation-item__guest-name js-guest-name" value="{{fullName}}" />
+        <div class="invitation-item__dietary-restrictions dietary-restrictions js-edit-guest">
           {{#each dietaryRestrictions}}
             {{> dietaryRestrictionItem}}
           {{/each}}
