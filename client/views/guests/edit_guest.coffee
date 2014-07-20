@@ -14,9 +14,3 @@ Template.editGuest.events
 
   'click .js-cancel, click .js-close-modal': (event, instance) ->
     Meteor.closeModal 'editingGuest'
-
-  'click .js-disable-guest': (event, instance) ->
-    guestId = instance.data._id
-    Meteor.call 'disableGuest', guestId, (err, id) ->
-      alert err if err?
-      console.log('guest disabled')
