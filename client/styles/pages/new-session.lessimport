@@ -1,0 +1,38 @@
+.new-session-form {
+  margin-top: 40px;
+}
+
+.new-session-form__confirm-password {
+  transition: height 0.3s ease;
+  height: 0
+}
+
+.new-session-form--sign-up .new-session-form__confirm-password {
+  height: 37px;
+}
+
+
+input.new-session-form__radio {
+  -webkit-appearance: none;
+  display: inline-block;
+  margin-right: 40px;
+  color: rgba(255,255,255,.3);
+  cursor: pointer;
+
+  &:checked {
+    color: white;
+    cursor: default;
+  }
+}
+
+.new-session-form__radio--sign-in {
+  &:after {
+    content: "Sign in";
+  }
+}
+
+.new-session-form__radio--sign-up {
+  &:after {
+    content: "Sign up";
+  }
+}

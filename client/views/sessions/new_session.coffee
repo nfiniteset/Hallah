@@ -8,6 +8,9 @@ handleIt = (err) ->
   else
     Router.go 'home'
 
+isSignUp = (element) ->
+  element.value == 'sign-up'
+
 Template.newSession.events
   'submit #sign-in-form' : (event, template) ->
     event.preventDefault()
@@ -19,3 +22,10 @@ Template.newSession.events
     event.preventDefault()
     Accounts.createUser params(template), handleIt
     return false
+
+  'change .new-session-form__radio': (event, template) ->
+    $(template.find('.new-session-form')).toggleClass('new-session-form--sign-up', isSignUp(event.target))
+    if isSignUp(event.target)
+      $('[type=submit]').val('Sign up')
+    else
+      $('[type=submit]').val('Sign in')

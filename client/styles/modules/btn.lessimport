@@ -1,7 +1,11 @@
 .h-btn {
+  width: auto;
+  min-width: 160px;
+  padding: 0;
+
   border-radius: 32px;
   background-color: rgba(0,0,0,.05);
-  cursor:pointer;
+  cursor: pointer;
 
   text-align: center;
   line-height: 42px;
