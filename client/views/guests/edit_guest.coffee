@@ -7,7 +7,6 @@ Template.editGuest.events
     event.preventDefault()
     dietaryRestrictions = instance.find('.js-select-dietary-restrictions')
     guestAttributes =
-      name: instance.find('[name=guestName]').value
       dietaryRestrictionIds: dietaryRestrictions.selectize.getValue()
 
     Guests.update(@_id, { $set: guestAttributes })
