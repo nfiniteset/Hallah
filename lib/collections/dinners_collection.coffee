@@ -14,7 +14,7 @@ Meteor.methods
     latestDinnerDate = if latestDinner && latestDinner.date > today
       latestDinner.date
     else
-       today
+      today
 
     Dinners.insert
       hostId: @userId

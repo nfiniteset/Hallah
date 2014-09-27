@@ -1,5 +1,4 @@
-@Guests = new Meteor.Collection 'guests',
-  transform: (guest) -> _(guest).extend(fullName: guest.name)
+@Guests = new Meteor.Collection 'guests'
 
 Guests.allow
   update: (userId, guest) ->

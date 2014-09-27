@@ -2,7 +2,7 @@
   <li class="invitation-item {{stateClass}} clearfix row">
     <div class="pull-left col-xs-6 invitation-item__guest-info">
       {{#with guest}}
-        <input class="hallah-form-control invitation-item__guest-name js-guest-name" value="{{fullName}}" />
+        <input class="hallah-form-control invitation-item__guest-name js-guest-name" value="{{name}}" />
         <div class="invitation-item__dietary-restrictions dietary-restrictions js-edit-guest">
           {{#each dietaryRestrictions}}
             {{> dietaryRestrictionItem}}
