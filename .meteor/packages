@@ -3,14 +3,19 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
+# --------- Meteor ---------
 standard-app-packages
 accounts-base
 accounts-password
 coffeescript
-moment
-npm
 less
-migrations
-publish-with-relations
-bootstrap3-less
-iron-router
+
+# -------- Unmigrated ----------
+mrt:migrations@0.0.2
+
+# --------- Atmosphere --------
+iron:router
+meteorhacks:npm
+mrt:moment@2.8.1
+mrt:publish-with-relations@0.1.5
+simison:bootstrap3-less
