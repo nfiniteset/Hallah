@@ -9,7 +9,7 @@ Template.invitationItem.helpers
 
   stateClass: ->
     label = InvitationStates.codeFor(@state)
-    "invitation-state--#{label}"
+    "invitation-item--#{label}"
 
   dietaryRestrictions: ->
     DietaryRestrictions.find _id: { $in: @dietaryRestrictionIds }
