@@ -1,6 +1,6 @@
 <template name="invitationItem">
-  <li class="invitation-item {{stateClass}} clearfix row">
-    <div class="pull-left col-xs-6 invitation-item__guest-info">
+  <li class="invitation-item {{stateClass}}">
+    <div class="invitation-item__guest-info">
       {{#with guest}}
         <input class="hallah-form-control invitation-item__guest-name js-guest-name" value="{{name}}" />
         <div class="invitation-item__dietary-restrictions dietary-restrictions js-edit-guest">
@@ -10,8 +10,6 @@
         </div>
       {{/with}}
     </div>
-    <div class="pull-right col-xs-6 col-sm-4 col-md-4 col-lg-4">
-      <h5 class="js-edit-invitation h-btn invitation-item__invitation-state">{{invitationStateLabelFor state}}</h5>
-    </div>
+    <h5 class="js-edit-invitation h-btn invitation-item__invitation-state">{{invitationStateLabelFor state}}</h5>
   </li>
 </template>

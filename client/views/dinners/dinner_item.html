@@ -12,7 +12,7 @@
       <div class="form-group">
         <textarea class="hallah-form-control js-dinner-notes" placeholder="Notes">{{notes}}</textarea>
       </div>
-      <ul class="list-unstyled">
+      <ul class="dinner__invitation-list">
         {{#each invitations}}
           {{> invitationItem}}
         {{else}}
@@ -20,7 +20,7 @@
         {{/each}}
       </ul>
       <div class="form-group">
-        <li class="">{{> newInvitation}}</li>
+        <li>{{> newInvitation}}</li>
       </div>
     </div>
   </li>

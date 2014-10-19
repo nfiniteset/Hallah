@@ -1,9 +1,16 @@
 .invitation-item {
-  margin-bottom: 6px;
+  .clearfix;
+  margin-bottom: @gutter * 2;
+
+  @media @wide {
+    margin-bottom: @gutter / 2;
+  }
 }
 
 .invitation-item__guest-info {
-  margin-bottom: 6px;
+  float: left;
+  width: 67%;
+  margin-bottom: @gutter / 2;
 
   cursor: pointer;
 }
@@ -19,8 +26,11 @@
 }
 
 .invitation-item__invitation-state {
+  float: left;
+  width: 33%;
+  min-width: 0;
 }
 
 .invitation-item__dietary-restrictions {
-  opacity: .7;
+  opacity: 0.7;
 }
