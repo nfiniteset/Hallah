@@ -1,19 +1,13 @@
-.hallah-container {
+.l-retainer {
   position: relative;
-}
+  width: 100%;
+  padding: 0 @gutter;
+  min-width: 320px;
 
-@media (max-width: @screen-xs-max) {
-  .hallah-container {
-    width: 100%;
-    padding: 0 16px;
-    min-width: 320px;
-  }
-}
-
-@media (min-width: @screen-sm-min) {
-  .hallah-container {
+  @media @wide {
+    padding: 0;
     left: 50%;
-    margin-left: -((@screen-xs-max/2) - 8);
-    width: @screen-xs-max - 16;
+    margin-left: -((@wide-width/2) - 8);
+    width: @wide-width - 16;
   }
 }
