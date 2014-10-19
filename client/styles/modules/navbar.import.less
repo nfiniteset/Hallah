@@ -1,43 +1,31 @@
-.hallah-navbar {
-  padding: 96px 0 64px 0;
-  background-color: rgba(237, 42, 38, 0.3);
+.header {
+  padding: (2 * @gutter) 0 @gutter 0;
+  background-color: fadein(@highlight-color, 30%);
 }
 
-.hallah-navbar__brand {
-  color: white;
-}
-
-.hallah-navbar__session {
+.header__session {
   float: right;
   font-size: @font-size-small;
 }
 
-.hallah-navbar__session__current-user-label {
-}
-
-.hallah-navbar__session__sign-out-btn {
+.header__session__sign-out-btn {
   display: block;
   color: rgba(255,255,255,0.5);
+  text-transform: lowercase;
 }
 
-.hallah-navbar__links {
-  list-style: none;
-  padding: 0;
+.header__links {
+  .unstyled-list;
   .clearfix;
 
-  & > li {
-    float: left;
-    margin-right: 15px;
+  > li {
+    @media @wide {
+      float: left;
+      margin-right: 15px;
+    }
 
-    & > a {
+    > a {
       display: block;
-
     }
   }
-}
-
- @media (max-width: 640px) {
-    .hallah-navbar__links > li {
-      float: none;
-   }
 }

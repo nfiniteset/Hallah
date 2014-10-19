@@ -1,12 +1,11 @@
-<template name="navbar">
-  <nav class="hallah-navbar">
+<template name="header">
+  <nav class="header">
     <div class="hallah-container">
-      <a class="hallah-navbar__brand" href="{{pathFor 'home'}}"><h1>Hallah</h1></a>
       {{#if currentUser}}
-        <div class="hallah-navbar__session">
-          <p><span class="hallah-navbar__session__current-user-label">{{currentUserLabel}}</span> <a class="hallah-navbar__session__sign-out-btn" href="{{pathFor 'destroySession'}}">Sign out</a></p>
+        <div class="header__session">
+          <p><span class="header__session__current-user-label">{{currentUserLabel}}</span> <a class="header__session__sign-out-btn" href="{{pathFor 'destroySession'}}">Sign out</a></p>
         </div>
-        <ul class="hallah-navbar__links">
+        <ul class="header__links">
           <li><a href="{{pathFor 'dinnersList'}}"><p>Dinners</p></a></li>
           <li><a href="{{pathFor 'guestsList'}}"><p>Guests</p></a></li>
           <li><a href="{{pathFor 'dinnersPastList'}}"><p>History</p></a></li>
