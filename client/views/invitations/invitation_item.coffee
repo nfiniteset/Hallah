@@ -1,4 +1,9 @@
 Template.invitationItem.helpers
+  states: ->
+    InvitationStates.find().map (state) =>
+      state.selected = state.id == @state
+      state
+
   guest: ->
     _(Guests.findOne @guestId).extend invitationId: @_id
 
@@ -14,8 +19,13 @@ Template.invitationItem.events
     guest = Guests.findOne(instance.data.guestId)
     Meteor.openModal("editingGuest", guest)
 
-  'click .js-edit-invitation': (event, instance) ->
-    Meteor.openModal("editingInvitation", instance.data)
+  'change .js-edit-invitation-state': (event, instance) ->
+    stateId = event.target.value
+
+    if stateId == 'remove'
+      Invitations.remove(@_id)
+    else
+      Invitations.update(@_id, { $set: { state: stateId } })
 
   'change .js-guest-name': (event, instance) ->
     name = $(event.currentTarget).val()

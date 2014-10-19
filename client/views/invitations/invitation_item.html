@@ -10,6 +10,12 @@
         </div>
       {{/with}}
     </div>
-    <h5 class="js-edit-invitation h-btn invitation-item__invitation-state">{{invitationStateLabelFor state}}</h5>
+    <select class="h-btn invitation-item__invitation-state js-edit-invitation-state">
+      {{#each states}}
+        <option value="{{id}}" selected="{{selected}}">{{label}}</option>
+      {{/each}}
+      <option disabled="disabled"></option>
+      <option value="remove">Remove invitation</option>
+    </select>
   </li>
 </template>
