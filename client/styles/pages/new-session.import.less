@@ -3,25 +3,38 @@
 }
 
 .new-session-form__confirm-password {
-  transition: height 0.3s ease;
-  height: 0
+  transition: height 0.3s ease, padding 0.3s ease;
+
+  &[disabled] {
+    height: 0;
+    padding: 0 12px;
+    background-color: @input-bg;
+  }
 }
 
-.new-session-form--sign-up .new-session-form__confirm-password {
+.new-session-form--is-sign-up .new-session-form__confirm-password {
   height: 37px;
+  padding: 6px 12px;
 }
 
 
 input.new-session-form__radio {
   -webkit-appearance: none;
-  display: inline-block;
+  .hallah-form-control();
+  float: left;
+  width: 100px;
+//   display: inline-block;
   margin-right: 40px;
-  color: rgba(255,255,255,.3);
-  cursor: pointer;
+  margin-bottom: 10px;
+  min-width: inherit;
+  .box-shadow(0 0 0 3px rgba(255,255,255,.3));
+  // color: rgba(255,255,255,.3);
+//   cursor: pointer;
 
   &:checked {
-    color: white;
-    cursor: default;
+    // color: white;
+    .box-shadow(0 0 0 3px rgba(255,255,255,.6));
+    // cursor: default;
   }
 }
 
