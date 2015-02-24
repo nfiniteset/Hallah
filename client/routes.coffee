@@ -25,11 +25,12 @@ Router.map ->
       @redirect 'newSession'
 
 
-requireLogin = (pause) ->
+requireLogin = () ->
   if Meteor.loggingIn()
-    return pause()
+    return
   else unless Meteor.user()
     @render 'newSession'
-    pause()
+  else
+    @next()
 
 Router.onBeforeAction(requireLogin);
