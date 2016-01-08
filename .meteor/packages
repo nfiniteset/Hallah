@@ -18,5 +18,6 @@ iron:router
 meteorhacks:npm
 mrt:moment@2.8.1
 mrt:publish-with-relations@0.1.5
-simison:bootstrap3-less
 
+standard-minifiers
+nemo64:bootstrap
