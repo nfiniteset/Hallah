@@ -2,7 +2,7 @@
   {{#requireLogin}}
     {{#if appReady}}
       {{> header}}
-      {{> yield}}
+      {{> Template.dynamic template=main}}
       {{> editGuest}}
     {{else}}
       {{> loading}}

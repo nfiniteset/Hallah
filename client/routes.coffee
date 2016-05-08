@@ -1,22 +1,13 @@
-Router.configure
-  layoutTemplate: 'layout'
+route = (path, templateName) ->
+  FlowRouter.route path,
+    name: templateName,
+    action: -> render templateName
+render = (templateName) ->
+  BlazeLayout.render 'layout', { main: templateName }
 
-Router.map ->
-  @route 'home',
-    action: ->
-      @redirect 'dinnersList'
-  @route 'dinnersList',
-    path: '/'
-    template: 'dinnersList'
-  @route 'dinnersPastList',
-    path: '/history'
-    template: 'dinnersPastList'
-  @route 'guestsList',
-    path: '/guests',
-    template: 'guestsList'
-  @route 'newSession',
-    path: '/sign_in'
-    template: 'newSession'
-  @route 'destroySession',
-    path: '/sign_out'
-    template: 'destroySession'
+FlowRouter.route '/',
+  name: 'home',
+  action: render 'dinnersList'
+route '/dinnersList', 'dinnersList'
+route '/history', 'dinnersPastList'
+route '/guests', 'guestsList'

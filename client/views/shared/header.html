@@ -3,7 +3,10 @@
     <div class="l-retainer">
       {{#if currentUser}}
         <div class="header__session">
-          <p><span class="header__session__current-user-label">{{currentUserLabel}}</span> <a class="header__session__sign-out-btn" href="{{pathFor 'destroySession'}}">Sign out</a></p>
+          <p>
+            <span class="header__session__current-user-label">{{currentUserLabel}}</span>
+            <button class="header__session__sign-out-btn js-sign-out-btn">Sign out</button>
+          </p>
         </div>
         <ul class="header__links">
           <li><a href="{{pathFor 'dinnersList'}}"><p>Dinners</p></a></li>
