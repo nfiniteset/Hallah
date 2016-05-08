@@ -1,5 +1,9 @@
 <template name="layout">
-  {{> header}}
-  {{> yield}}
-  {{> editGuest}}
+  {{#if appReady}}
+    {{> header}}
+    {{> yield}}
+    {{> editGuest}}
+  {{else}}
+    {{> loading}}
+  {{/if}}
 </template>
