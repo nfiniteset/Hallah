@@ -1,0 +1,11 @@
+<template name="requireLogin">
+  {{#if loggingIn}}
+    {{> loading}}
+  {{/if}}
+  {{#if noUser}}
+    {{> newSession}}
+  {{/if}}
+  {{#if loggedIn}}
+    {{> Template.contentBlock}}
+  {{/if}}
+</template>

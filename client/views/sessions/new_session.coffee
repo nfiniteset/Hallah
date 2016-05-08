@@ -8,8 +8,6 @@ params = (template) ->
 handleIt = (err) ->
   if err
     console.log('Error signing in', err)
-  else
-    Router.go 'home'
 
 isSignUp = (element) ->
   element.value == 'sign-up'

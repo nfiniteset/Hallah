@@ -1,5 +1,11 @@
 <template name="layout">
-  {{> header}}
-  {{> yield}}
-  {{> editGuest}}
+  {{#requireLogin}}
+    {{#if appReady}}
+      {{> header}}
+      {{> Template.dynamic template=main}}
+      {{> editGuest}}
+    {{else}}
+      {{> loading}}
+    {{/if}}
+  {{/requireLogin}}
 </template>
