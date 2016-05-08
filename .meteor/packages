@@ -19,5 +19,6 @@ meteorhacks:npm
 mrt:moment@2.8.1
 mrt:publish-with-relations@0.1.5
 
-standard-minifiers
 nemo64:bootstrap
+standard-minifier-css
+standard-minifier-js
