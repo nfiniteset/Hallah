@@ -1,9 +1,11 @@
 <template name="layout">
-  {{#if appReady}}
-    {{> header}}
-    {{> yield}}
-    {{> editGuest}}
-  {{else}}
-    {{> loading}}
-  {{/if}}
+  {{#requireLogin}}
+    {{#if appReady}}
+      {{> header}}
+      {{> yield}}
+      {{> editGuest}}
+    {{else}}
+      {{> loading}}
+    {{/if}}
+  {{/requireLogin}}
 </template>

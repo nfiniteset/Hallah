@@ -22,14 +22,3 @@ Router.map ->
     action: ->
       Meteor.logout()
       @redirect 'newSession'
-
-
-requireLogin = () ->
-  if Meteor.loggingIn()
-    return
-  else unless Meteor.user()
-    @render 'newSession'
-  else
-    @next()
-
-Router.onBeforeAction(requireLogin);
