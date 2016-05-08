@@ -24,6 +24,3 @@ node_modules
 .git
 .build*
 packages/
-
-client/lib/custom.bootstrap.less
-client/lib/custom.bootstrap.mixins.import.less
