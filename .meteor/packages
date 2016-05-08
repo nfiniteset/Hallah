@@ -9,16 +9,14 @@ accounts-base
 accounts-password
 coffeescript
 less
+standard-minifier-css
+standard-minifier-js
 
 # -------- Unmigrated ----------
 mrt:migrations@0.0.2
 
 # --------- Atmosphere --------
 iron:router
-meteorhacks:npm
 mrt:moment@2.8.1
 mrt:publish-with-relations@0.1.5
-
 nemo64:bootstrap
-standard-minifier-css
-standard-minifier-js
