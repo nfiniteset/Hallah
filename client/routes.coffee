@@ -19,6 +19,4 @@ Router.map ->
     template: 'newSession'
   @route 'destroySession',
     path: '/sign_out'
-    action: ->
-      Meteor.logout()
-      @redirect 'newSession'
+    template: 'destroySession'
