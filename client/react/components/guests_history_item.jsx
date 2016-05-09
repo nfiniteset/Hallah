@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import moment from 'moment';
 
 GuestHistoryItem = React.createClass({
   propTypes: {
@@ -35,11 +36,10 @@ GuestHistoryItem = React.createClass({
   },
 
   formatDate(date) {
-    return moment(date).format('dddd MMMM D')
+    return moment(date).format('dddd MMMM D');
   },
 
   renderLastInvited() {
-    // <span>Last invited: {{formatDate lastInvited}}, {{year lastInvited}}</span>
     let last = this.lastInvited()
     if (last) {
       return this.formatDate(last)

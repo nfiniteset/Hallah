@@ -1,4 +1,5 @@
 Template.invitationItem.helpers
+  DietaryRestrictionsList: -> DietaryRestrictionsList
   states: ->
     InvitationStates.find().map (state) =>
       state.selected = state.id == @state

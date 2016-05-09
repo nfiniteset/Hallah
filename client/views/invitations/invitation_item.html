@@ -4,9 +4,7 @@
       {{#with guest}}
         <input class="hallah-form-control invitation-item__guest-name js-guest-name" value="{{name}}" />
         <div class="invitation-item__dietary-restrictions dietary-restrictions js-edit-guest">
-          {{#each dietaryRestrictions}}
-            {{> dietaryRestrictionItem}}
-          {{/each}}
+          {{> React component=DietaryRestrictionsList dietaryRestrictions=dietaryRestrictions}}
         </div>
       {{/with}}
     </div>

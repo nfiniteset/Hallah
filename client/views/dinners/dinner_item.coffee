@@ -6,6 +6,7 @@ Template.dinnerItem.helpers
     if moment().startOf('day').isAfter(@date)
       classes.push 'dinner--past'
     classes.join(' ')
+  DietaryRestrictionsList: -> DietaryRestrictionsList
 
 Template.dinnerItem.rendered = ->
   _autosizeNotesField(@)
@@ -31,4 +32,3 @@ _dietaryRestrictions = (instance) ->
 _autosizeNotesField = (instance) ->
   notesEl = $(instance.find('.js-dinner-notes'))
   notesEl.autosize().addClass('autosize-is-transitioning')
-

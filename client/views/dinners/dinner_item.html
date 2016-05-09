@@ -1,10 +1,8 @@
 <template name="dinnerItem">
   <li class="{{classes}}">
     <header class="dinner__header l-retainer">
-      <div class="dietary-restrictions">
-        {{#each dietaryRestrictions}}
-          {{> dietaryRestrictionItem}}
-        {{/each}}
+      <div>
+        {{> React component=DietaryRestrictionsList dietaryRestrictions=dietaryRestrictions}}
       </div>
       <h1 class="dinner__title">{{formatDate date}}</h1>
     </header>
