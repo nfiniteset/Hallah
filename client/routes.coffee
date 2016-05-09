@@ -10,4 +10,4 @@ FlowRouter.route '/',
   action: -> render 'dinnersList'
 route '/dinnersList', 'dinnersList'
 route '/history', 'dinnersPastList'
-route '/guests', 'guestsList'
+route '/guests', 'guestsPage'
