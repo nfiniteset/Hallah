@@ -7,7 +7,7 @@ render = (templateName) ->
 
 FlowRouter.route '/',
   name: 'home'
-  action: -> render 'dinnersList'
-route '/dinnersList', 'dinnersList'
-route '/history', 'dinnersPastList'
+  action: -> render 'dinnersPage'
+route '/dinners', 'dinnersPage'
 route '/guests', 'guestsPage'
+route '/history', 'historyPage'
