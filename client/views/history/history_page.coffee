@@ -1,4 +1,4 @@
-Template.dinnersPastList.helpers
+Template.historyPage.helpers
   dinners: ->
     today = moment().startOf('day').toDate().getTime()
     Dinners.find({"date": { $lt: today }}, { sort: { "date": -1 } })
