@@ -11,3 +11,4 @@ FlowRouter.route '/',
 route '/dinners', 'dinnersPage'
 route '/guests', 'guestsPage'
 route '/history', 'historyPage'
+route '/guests/:id', 'guestPage'
