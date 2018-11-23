@@ -1,3 +1,5 @@
+import Dinners from '../../../imports/api/dinners';
+
 Template.historyPage.helpers({
   dinners() {
     const today = moment().startOf('day').toDate().getTime();

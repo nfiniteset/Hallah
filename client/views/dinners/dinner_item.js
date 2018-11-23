@@ -1,3 +1,5 @@
+import Dinners from '../../../imports/api/dinners';
+
 Template.dinnerItem.helpers({
   invitations() { return _invitations(this); },
   dietaryRestrictions() { return _dietaryRestrictions(this); },

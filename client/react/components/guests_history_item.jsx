@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import moment from 'moment';
+import Dinners from '../../../imports/api/dinners';
 
 GuestHistoryItem = React.createClass({
   propTypes: {

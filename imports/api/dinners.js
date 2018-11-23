@@ -1,4 +1,4 @@
-this.Dinners = new Meteor.Collection('dinners');
+const Dinners = new Meteor.Collection('dinners');
 
 Dinners.allow({
   update(dinner) {
@@ -25,3 +25,5 @@ Meteor.methods({
     });
   }
 });
+
+export default Dinners;

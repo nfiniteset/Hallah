@@ -1,7 +1,11 @@
+import Dinners from '../../../imports/api/dinners';
+
 Template.dinnersPage.helpers({
   dinners() {
     const today = moment().startOf('day').toDate().getTime();
-    return Dinners.find({"date": { $gte: today }}, { sort: { "date": 1 } });
+    const dinners = Dinners.find({"date": { $gte: today }}, { sort: { "date": 1 } });
+    console.log(dinners.count());
+    return dinners;
   }
 });
 
