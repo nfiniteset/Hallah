@@ -14,7 +14,7 @@ DietaryRestrictionsList = React.createClass({
     });
 
     return (
-      <div class="dietary-restrictions">
+      <div className="dietary-restrictions">
         {dietaryRestrictionBadges}
       </div>
     );
