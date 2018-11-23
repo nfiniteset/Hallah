@@ -1,16 +1,17 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 import Dinners from '../../../imports/api/dinners';
 
-GuestHistoryItem = React.createClass({
-  propTypes: {
+class GuestHistoryItem extends React.Component {
+  static propTypes = {
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired
-  },
+  }
 
   invitations() {
     return Invitations.find({ "guestId": this.props.id });
-  },
+  }
 
   lastInvited() {
     inviteIds = Invitations.find({ guestId: this.props.id }).map((i) => i.dinnerId);
@@ -20,7 +21,7 @@ GuestHistoryItem = React.createClass({
     } else {
       return undefined;
     }
-  },
+  }
 
   renderInvitations() {
     return this.invitations().map((invitation) => {
@@ -34,11 +35,11 @@ GuestHistoryItem = React.createClass({
         <li className={classNames} key={key}>|</li>
       )
     });
-  },
+  }
 
   formatDate(date) {
     return moment(date).format('dddd MMMM D');
-  },
+  }
 
   renderLastInvited() {
     let last = this.lastInvited()
@@ -47,7 +48,7 @@ GuestHistoryItem = React.createClass({
     } else {
       return "Never invited"
     }
-  },
+  }
 
   render() {
     return (
@@ -64,4 +65,4 @@ GuestHistoryItem = React.createClass({
       </div>
     )
   }
-});
+}

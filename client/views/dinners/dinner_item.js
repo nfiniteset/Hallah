@@ -1,5 +1,6 @@
 import Dinners from '../../../imports/api/dinners';
 import Guests from '../../../imports/api/guests';
+import DietaryRestrictionsList from "../dinners/dietary_restrictions_list";
 
 Template.dinnerItem.helpers({
   invitations() { return _invitations(this); },

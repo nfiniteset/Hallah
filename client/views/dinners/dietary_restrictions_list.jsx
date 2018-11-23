@@ -1,7 +1,7 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import cn from 'classnames';
 
-DietaryRestrictionsList = React.createClass({
+class DietaryRestrictionsList extends React.Component {
   render() {
     let dietaryRestrictionBadges = this.props.dietaryRestrictions.map(function(dietaryRestriction){
       let classNames = cn('badge', {
@@ -19,4 +19,6 @@ DietaryRestrictionsList = React.createClass({
       </div>
     );
   }
-});
+}
+
+export default DietaryRestrictionsList;
