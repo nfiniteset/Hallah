@@ -1,19 +1,20 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-ShowGuest = React.createClass({
-  propTypes: {
+class ShowGuest extends React.Component {
+  static propTypes = {
     guest: PropTypes.shape({
       name: PropTypes.string
     }).isRequired
-  },
+  }  
 
-  saveName: function(event){
+  saveName(event){
     this.props.updateGuest({ name: event.target.value });
-  },
+  }
 
-  saveDietaryRestrictions: function(event){
+  saveDietaryRestrictions(event) {
     console.log(event.target.value);
-  },
+  }
 
   render() {
     return(
@@ -26,4 +27,6 @@ ShowGuest = React.createClass({
       </form>
     );
   }
-});
+}
+
+export default ShowGuest;

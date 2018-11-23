@@ -1,4 +1,6 @@
-this.Guests = new Meteor.Collection('guests');
+import { Mongo } from 'meteor/mongo';
+
+const Guests = new Mongo.Collection('guests');
 
 Guests.allow({
   update(userId, guest) {
@@ -29,3 +31,5 @@ Meteor.methods({
     });
   }
 });
+
+export default Guests;

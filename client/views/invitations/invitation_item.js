@@ -1,3 +1,4 @@
+import Guests from '../../../imports/api/guests';
 Template.invitationItem.helpers({
   DietaryRestrictionsList() { return DietaryRestrictionsList; },
   states() {

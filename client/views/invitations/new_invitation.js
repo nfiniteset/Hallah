@@ -1,3 +1,5 @@
+import Guests from '../../../imports/api/guests';
+
 Template.newInvitation.created = function() {
   this.dinnerInvites = Invitations.find({"dinnerId": this.data._id});
   return _observeInvitations.apply(this);

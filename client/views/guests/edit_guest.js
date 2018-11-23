@@ -1,3 +1,5 @@
+import Guests from '../../../imports/api/guests';
+
 Template.editGuest.helpers({
   editingGuest() {
     return Session.get('editingGuest');

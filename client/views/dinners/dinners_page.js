@@ -4,7 +4,6 @@ Template.dinnersPage.helpers({
   dinners() {
     const today = moment().startOf('day').toDate().getTime();
     const dinners = Dinners.find({"date": { $gte: today }}, { sort: { "date": 1 } });
-    console.log(dinners.count());
     return dinners;
   }
 });

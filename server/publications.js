@@ -1,4 +1,5 @@
 import Dinners from '../imports/api/dinners';
+import Guests from '../imports/api/guests';
 
 Meteor.publish('allDinners', function() {
   return Meteor.publishWithRelations({
