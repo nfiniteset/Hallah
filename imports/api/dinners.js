@@ -1,3 +1,5 @@
+import followingFriday from '../helpers/followingFriday';
+
 const Dinners = new Meteor.Collection('dinners');
 
 Dinners.allow({
