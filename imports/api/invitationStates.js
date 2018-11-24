@@ -1,4 +1,6 @@
-this.InvitationStates = new Meteor.Collection('invitation_states');
+import { Mongo } from 'meteor/mongo';
+
+const InvitationStates = new Mongo.Collection('invitation_states');
 
 const defaultQueryOptions = { sort: { "priority": 1 } };
 
@@ -13,3 +15,5 @@ InvitationStates.labelFor = function(stateId) {
 };
 
 InvitationStates.codeFor = stateId => InvitationStates.labelFor(stateId).toLowerCase();
+
+export default InvitationStates;

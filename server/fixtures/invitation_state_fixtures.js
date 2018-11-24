@@ -1,3 +1,5 @@
+import InvitationStates from '../../imports/api/invitationStates';
+
 const states = [
   { id: "0", label: 'Invited', expected: true, priority: 0 },
   { id: "1", label: 'Accepted', expected: true, priority: 1 },

@@ -1,4 +1,5 @@
 import { Mongo } from 'meteor/mongo';
+import InvitationStates from './invitationStates';
 
 const Invitations = new Mongo.Collection('invitations');
 

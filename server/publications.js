@@ -1,6 +1,8 @@
 import Dinners from '../imports/api/dinners';
 import Guests from '../imports/api/guests';
 import Invitations from '../imports/api/invitations';
+import InvitationStates from '../imports/api/invitationStates';
+import DietaryRestrictions from '../imports/api/dietaryRestrictions';
 
 Meteor.publish('allDinners', function() {
   return Meteor.publishWithRelations({

@@ -1,6 +1,6 @@
-this.UNKNOWN_RESTRICTION_LABEL = 'unknown';
+const UNKNOWN_RESTRICTION_LABEL = 'unknown';
 
-this.DietaryRestrictions = new Meteor.Collection('dietary_restrictions', {
+const DietaryRestrictions = new Meteor.Collection('dietary_restrictions', {
   transform(restriction) {
     restriction.unknown = restriction.label === UNKNOWN_RESTRICTION_LABEL;
     return restriction;
@@ -23,3 +23,6 @@ Meteor.methods({
     return DietaryRestrictions.insert(dietaryRestrictionAttributes);
   }
 });
+
+export default DietaryRestrictions;
+export { UNKNOWN_RESTRICTION_LABEL };

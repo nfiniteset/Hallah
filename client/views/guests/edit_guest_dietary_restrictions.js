@@ -1,3 +1,5 @@
+import DietaryRestrictions from '../../../imports/api/dietaryRestrictions';
+
 Template.editGuestDietaryRestrictions.created = function() {
   this.dietaryRestrictions = DietaryRestrictions.find();
   return this.dietaryRestrictions.observe({
