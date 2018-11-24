@@ -1,4 +1,4 @@
-import Guests from '../../../imports/api/guests';
+import Guests from '../../../imports/api/Guests';
 
 Template.editGuest.helpers({
   editingGuest() {

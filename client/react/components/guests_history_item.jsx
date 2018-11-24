@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import Dinners from '../../../imports/api/dinners';
-import Invitations from '../../../imports/api/invitations';
-import InvitationStates from '../../../imports/api/invitationStates';
+import Dinners from '../../../imports/api/Dinners';
+import Invitations from '../../../imports/api/Invitations';
+import InvitationStates from '../../../imports/api/InvitationStates';
 
 class GuestHistoryItem extends React.Component {
   static propTypes = {

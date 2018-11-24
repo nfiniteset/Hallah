@@ -1,4 +1,4 @@
-import Dinners from '../../../imports/api/dinners';
+import Dinners from '../../../imports/api/Dinners';
 
 Template.historyPage.helpers({
   dinners() {

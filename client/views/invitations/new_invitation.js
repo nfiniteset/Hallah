@@ -1,5 +1,5 @@
-import Guests from '../../../imports/api/guests';
-import Invitations from '../../../imports/api/invitations';
+import Guests from '../../../imports/api/Guests';
+import Invitations from '../../../imports/api/Invitations';
 
 Template.newInvitation.created = function() {
   this.dinnerInvites = Invitations.find({"dinnerId": this.data._id});

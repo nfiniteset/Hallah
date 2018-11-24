@@ -1,4 +1,4 @@
-import Guests from '../../../imports/api/guests';
+import Guests from '../../../imports/api/Guests';
 
 Template.guestsPage.helpers({
   guests() { return Guests.find({}, {sort: {"name": 1}}); },

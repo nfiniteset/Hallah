@@ -1,4 +1,4 @@
-import InvitationStates from '../../imports/api/invitationStates';
+import InvitationStates from '../../imports/api/InvitationStates';
 
 const states = [
   { id: "0", label: 'Invited', expected: true, priority: 0 },

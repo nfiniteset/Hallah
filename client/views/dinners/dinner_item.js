@@ -1,8 +1,8 @@
-import Dinners from '../../../imports/api/dinners';
-import Guests from '../../../imports/api/guests';
-import Invitations from '../../../imports/api/invitations';
-import InvitationStates from '../../../imports/api/invitationStates';
-import DietaryRestrictions from '../../../imports/api/dietaryRestrictions';
+import Dinners from '../../../imports/api/Dinners';
+import Guests from '../../../imports/api/Guests';
+import Invitations from '../../../imports/api/Invitations';
+import InvitationStates from '../../../imports/api/InvitationStates';
+import DietaryRestrictions from '../../../imports/api/DietaryRestrictions';
 
 import DietaryRestrictionsList from "../dinners/dietary_restrictions_list";
 

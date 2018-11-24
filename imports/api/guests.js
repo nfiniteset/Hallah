@@ -1,5 +1,5 @@
 import { Mongo } from 'meteor/mongo';
-import DietaryRestrictions from './dietaryRestrictions';
+import DietaryRestrictions from './DietaryRestrictions';
 
 const Guests = new Mongo.Collection('guests');
 
