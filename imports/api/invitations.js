@@ -1,4 +1,6 @@
-this.Invitations = new Meteor.Collection('invitations');
+import { Mongo } from 'meteor/mongo';
+
+const Invitations = new Mongo.Collection('invitations');
 
 Invitations.allow({
   remove() { return true; },
@@ -33,3 +35,5 @@ Meteor.methods({
     return Invitations.insert(invitationAttrs);
   }
 });
+
+export default Invitations;

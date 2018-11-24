@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import Dinners from '../../../imports/api/dinners';
+import Invitations from '../../../imports/api/invitations';
 
 class GuestHistoryItem extends React.Component {
   static propTypes = {
@@ -14,8 +15,8 @@ class GuestHistoryItem extends React.Component {
   }
 
   lastInvited() {
-    inviteIds = Invitations.find({ guestId: this.props.id }).map((i) => i.dinnerId);
-    lastDinner = Dinners.findOne({ _id: { $in: inviteIds } }, { sort: { 'date': -1 }});
+    const inviteIds = Invitations.find({ guestId: this.props.id }).map((i) => i.dinnerId);
+    const lastDinner = Dinners.findOne({ _id: { $in: inviteIds } }, { sort: { 'date': -1 }});
     if (lastDinner) {
       return lastDinner.date;
     } else {
@@ -66,3 +67,5 @@ class GuestHistoryItem extends React.Component {
     )
   }
 }
+
+export default GuestHistoryItem;
