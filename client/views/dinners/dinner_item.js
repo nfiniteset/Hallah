@@ -4,7 +4,7 @@ import Invitations from '../../../imports/api/Invitations';
 import InvitationStates from '../../../imports/api/InvitationStates';
 import DietaryRestrictions from '../../../imports/api/DietaryRestrictions';
 
-import DietaryRestrictionsList from "../dinners/dietary_restrictions_list";
+import DietaryRestrictionsList from "../../react/components/DietaryRestrictionsList";
 
 Template.dinnerItem.helpers({
   invitations() { return _invitations(this); },

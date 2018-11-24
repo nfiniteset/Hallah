@@ -1,5 +1,5 @@
 import React from 'react';
-import GuestHistoryItem from './guests_history_item';
+import GuestHistoryItem from './GuestsHistoryItem';
 
 GuestsList = function GuestsList(props) {
   return (
