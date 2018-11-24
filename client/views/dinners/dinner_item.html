@@ -12,7 +12,9 @@
       </div>
       <ul class="dinner__invitation-list">
         {{#each invitations}}
-          {{> invitationItem}}
+          <div>
+            {{> React component=InvitationItem guestId=guestId _id=_id state=state}}
+          </div>
         {{else}}
           <li class="invitation-item text-muted">No guests invited</li>
         {{/each}}

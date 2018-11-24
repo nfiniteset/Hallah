@@ -4,6 +4,7 @@ import Invitations from '../../../imports/api/Invitations';
 import InvitationStates from '../../../imports/api/InvitationStates';
 import DietaryRestrictions from '../../../imports/api/DietaryRestrictions';
 
+import InvitationItem from "../../react/components/InvitationItem";
 import DietaryRestrictionsList from "../../react/components/DietaryRestrictionsList";
 
 Template.dinnerItem.helpers({
@@ -16,7 +17,8 @@ Template.dinnerItem.helpers({
     }
     return classes.join(' ');
   },
-  DietaryRestrictionsList() { return DietaryRestrictionsList; }
+  DietaryRestrictionsList() { return DietaryRestrictionsList; },
+  InvitationItem() { return InvitationItem; }
 });
 
 Template.dinnerItem.rendered = function() {
