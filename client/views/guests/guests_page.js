@@ -1,6 +1,5 @@
-import Guests from '../../../imports/api/Guests';
+import GuestsPage from '../../react/containers/GuestsPage';
 
 Template.guestsPage.helpers({
-  guests() { return Guests.find({}, {sort: {"name": 1}}); },
-  GuestsList() { return GuestsList; }
+  GuestsPage() { return GuestsPage; }
 });
