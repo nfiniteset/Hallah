@@ -1,5 +1,6 @@
 import React from 'react';
 import { withTracker } from 'meteor/react-meteor-data';
+import cn from 'classnames';
 
 import Invitations from '../../../imports/api/Invitations';
 import InvitationStates from '../../../imports/api/InvitationStates';
@@ -19,7 +20,9 @@ class DinnerItem extends React.Component {
 
   render() {
     const { _id, dietaryRestrictions, notes, date, invitations } = this.props;
-    const classes = "TODO"; // TODO
+    const classes = cn("dinner", {
+      'dinner--past': moment().startOf('day').isAfter(date)
+    });
     const formattedDate = moment(date).format('dddd MMMM D');
 
     return (

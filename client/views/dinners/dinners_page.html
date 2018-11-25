@@ -1,12 +1,5 @@
 <template name="dinnersPage">
-  <ul class="dinners-list">
-    {{#each dinners}}
-      <div>
-        {{> React component=DinnerItem _id=_id notes=notes date=date}}
-      </div>
-    {{/each}}
-  </ul>
-  <a class="js-create-dinner paginate-btn">
-    <h1 class="l-retainer">Next dinner</h1>
-  </a>
+  <div>
+    {{> React component=DinnersPage}}
+  </div>
 </template>
