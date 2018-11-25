@@ -1,7 +1,9 @@
 <template name="dinnersPage">
   <ul class="dinners-list">
     {{#each dinners}}
-      {{> dinnerItem}}
+      <div>
+        {{> React component=DinnerItem _id=_id notes=notes date=date}}
+      </div>
     {{/each}}
   </ul>
   <a class="js-create-dinner paginate-btn">
