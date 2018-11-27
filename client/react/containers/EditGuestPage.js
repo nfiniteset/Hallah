@@ -9,7 +9,8 @@ class EditGuestPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      dietaryRestrictionIds: props.guest.dietaryRestrictionIds
+      dietaryRestrictionIds: props.guest.dietaryRestrictionIds,
+      name: props.guest.name
     }
   }
 
@@ -17,14 +18,16 @@ class EditGuestPage extends React.Component {
     this.setState({ dietaryRestrictionIds })
   }
 
+  handleNameChange = (event) => {
+    this.setState({ name: event.target.value })
+  }
+
   handleSubmit = () => {
-    this.props.save({
-      dietaryRestrictionIds: this.state.dietaryRestrictionIds
-    })
+    this.props.save(this.state);
   }
 
   render() {
-    const { guest, cancel } = this.props;
+    const { cancel } = this.props;
 
     return (
       <div>
@@ -32,10 +35,12 @@ class EditGuestPage extends React.Component {
         <div className="hallah-modal">
           <div className="h-modal__header">
             <h5>Edit</h5>
-            <h4>{guest.name}</h4>
           </div>
 
           <form className="form" onSubmit={this.handleSubmit}>
+            <div className="form-group h-modal__body">
+              <input value={this.state.name} onChange={this.handleNameChange} />
+            </div>
             <div className="form-group h-modal__body">
               <GuestDietaryRestrictionsField
                 onChange={this.handleGuestDietaryRestrictionChange}
@@ -78,7 +83,8 @@ export default withTracker(({ _id }) => {
   function updateGuest(guestAttrs) {
     Guests.update(_id, {
       $set: {
-        dietaryRestrictionIds: guestAttrs.dietaryRestrictionIds
+        dietaryRestrictionIds: guestAttrs.dietaryRestrictionIds,
+        name: guestAttrs.name
       }
     });
     Meteor.closeModal('editingGuest');

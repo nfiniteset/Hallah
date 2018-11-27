@@ -15,8 +15,6 @@ class InvitationItem extends React.Component {
 
     if (stateId === 'remove') {
       return this.props.onInvitationRemoved();
-    } else if (stateId === 'editGuest') {
-      return this.props.onEditGuestRequested();
     } else {
       return this.props.onInvitationStateChange(stateId);
     }
@@ -31,15 +29,10 @@ class InvitationItem extends React.Component {
 
     return (
       <li className={cn("invitation-item", `invitation-item--${state.label.toLowerCase()}`)}>
-        <div className="invitation-item__guest-info">
-          <input
-            className="hallah-form-control invitation-item__guest-name"
-            value={guest.name}
-            onChange={this.handleGuestNameChange}
-          />
+        <div className="invitation-item__guest-info" onClick={this.props.onEditGuestRequested}>
+          <div className="invitation-item__guest-name">{guest.name}</div>
           <div
             className="invitation-item__dietary-restrictions dietary-restrictions"
-            onClick={this.props.onEditGuestRequested}
           >
             <DietaryRestrictionsList dietaryRestrictions={dietaryRestrictions} />
           </div>
@@ -54,7 +47,6 @@ class InvitationItem extends React.Component {
           ))}
           <option disabled="disabled"></option>
           <option value="remove">Remove invitation</option>
-          <option value="editGuest">Edit guest</option>
         </select>
       </li>
     )
