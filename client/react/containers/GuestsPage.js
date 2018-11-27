@@ -9,13 +9,13 @@ function GuestsPage({ guests }) {
   return (
     <ul>
       {guests.map(guest => (
-        <GuestHistoryItem id={guest._id} name={guest.name} key={guest.name}/>
+        <GuestHistoryItem key={guest._id} {...guest} />
       ))}
     </ul>
   )
 }
 
 export default withTracker(() => {
-  const guests = Guests.find({}, { sort: { name: 1 } });
+  const guests = Guests.find({}, { sort: { name: 1 } }).fetch();
   return { guests };
 })(GuestsPage);

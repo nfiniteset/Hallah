@@ -56,7 +56,7 @@ class InvitationItem extends React.Component {
 export default withTracker(({ guestId, _id, state }) => {
   const guest = { ...Guests.findOne(guestId), invitationId: _id};
   const states = InvitationStates.find().fetch();
-  const invitationState = InvitationStates.findOne({ "id": state });
+  const invitationState = InvitationStates.findOne({ id: state });
   const dietaryRestrictions = DietaryRestrictions.find({_id: { $in: guest.dietaryRestrictionIds }}).fetch();
 
   function openGuestEditModal() {
