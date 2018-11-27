@@ -30,51 +30,49 @@ class EditGuestPage extends React.Component {
     const { cancel } = this.props;
 
     return (
-      <div>
-        <div onClick={cancel} className="hallah-modal-drop"></div>
-        <div className="hallah-modal">
-          <div className="h-modal__header">
-            <h5>Edit</h5>
+      <div className="l-retainer">
+        <div className="h-modal__header">
+          <h5>Edit</h5>
+        </div>
+
+        <form className="form" onSubmit={this.handleSubmit}>
+          <div className="form-group h-modal__body">
+            <input value={this.state.name} onChange={this.handleNameChange} />
+          </div>
+          <div className="form-group h-modal__body">
+            <GuestDietaryRestrictionsField
+              onChange={this.handleGuestDietaryRestrictionChange}
+              guestDietaryRestrictionIds={this.state.dietaryRestrictionIds}
+            />
           </div>
 
-          <form className="form" onSubmit={this.handleSubmit}>
-            <div className="form-group h-modal__body">
-              <input value={this.state.name} onChange={this.handleNameChange} />
-            </div>
-            <div className="form-group h-modal__body">
-              <GuestDietaryRestrictionsField
-                onChange={this.handleGuestDietaryRestrictionChange}
-                guestDietaryRestrictionIds={this.state.dietaryRestrictionIds}
-              />
-            </div>
-
-            <ul className="h-radio-list">
-              <li>
-                <a
-                  className="h-radio-list__item h-radio-list__item--primary"
-                  onClick={this.handleSubmit}
-                >
-                  Save
-                </a>
-              </li>
-              <li>
-                <a
-                  className="h-radio-list__item"
-                  onClick={cancel}
-                >
-                  Cancel
-                </a>
-              </li>
-            </ul>
-          </form>
-        </div>
+          <ul className="h-radio-list">
+            <li>
+              <a
+                className="h-radio-list__item h-radio-list__item--primary"
+                onClick={this.handleSubmit}
+              >
+                Save
+              </a>
+            </li>
+            <li>
+              <a
+                className="h-radio-list__item"
+                onClick={cancel}
+              >
+                Cancel
+              </a>
+            </li>
+          </ul>
+        </form>
       </div>
     );
   }
 }
 
-export default withTracker(({ _id }) => {
-  const guest = Session.get('editingGuest');
+export default withTracker(({ match }) => {
+  const { _id } = match.params;
+  const guest = Guests.findOne({ _id });
 
   function setGuestDietaryRestrictions(dietaryRestrictionIds) {
     Guests.update(_id, { $set: { dietaryRestrictionIds } });
@@ -87,17 +85,11 @@ export default withTracker(({ _id }) => {
         name: guestAttrs.name
       }
     });
-    Meteor.closeModal('editingGuest');
-  }
-
-  function cancel() {
-    Meteor.closeModal('editingGuest');
   }
 
   return {
     guest,
     setGuestDietaryRestrictions,
-    save: updateGuest,
-    cancel
+    save: updateGuest
   }
 })(EditGuestPage);

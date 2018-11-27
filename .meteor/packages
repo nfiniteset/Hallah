@@ -20,7 +20,6 @@ mrt:migrations@0.0.2
 mrt:moment@2.8.1
 mrt:publish-with-relations@0.1.5
 nemo64:bootstrap
-kadira:flow-router
 kadira:blaze-layout
 arillo:flow-router-helpers
 react-template-helper

@@ -1,3 +1,5 @@
+import App from '../react/App';
+
 Template.layout.onCreated(function() {
   const template = this;
   return template.autorun(function() {
@@ -12,5 +14,6 @@ Template.layout.onCreated(function() {
 Template.layout.helpers({
   appReady() {
     return Template.instance().subscriptionsReady();
-  }
+  },
+  App: () => App
 });

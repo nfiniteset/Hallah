@@ -8,6 +8,7 @@ import InvitationStates from '../../../imports/api/InvitationStates';
 import DietaryRestrictions from '../../../imports/api/DietaryRestrictions';
 
 import DietaryRestrictionsList from './DietaryRestrictionsList';
+import Link from './Link';
 
 class InvitationItem extends React.Component {
   handleInvitationStateChange = (event) => {
@@ -29,14 +30,14 @@ class InvitationItem extends React.Component {
 
     return (
       <li className={cn("invitation-item", `invitation-item--${state.label.toLowerCase()}`)}>
-        <div className="invitation-item__guest-info" onClick={this.props.onEditGuestRequested}>
+        <Link to={`/guests/${guest._id}`} className="invitation-item__guest-info">
           <div className="invitation-item__guest-name">{guest.name}</div>
           <div
             className="invitation-item__dietary-restrictions dietary-restrictions"
           >
             <DietaryRestrictionsList dietaryRestrictions={dietaryRestrictions} />
           </div>
-        </div>
+        </Link>
         <select
           className="invitation-item__invitation-state"
           value={state.id}
@@ -59,11 +60,6 @@ export default withTracker(({ guestId, _id, state }) => {
   const invitationState = InvitationStates.findOne({ id: state });
   const dietaryRestrictions = DietaryRestrictions.find({_id: { $in: guest.dietaryRestrictionIds }}).fetch();
 
-  function openGuestEditModal() {
-    const guest = Guests.findOne(guestId);
-    return Meteor.openModal("editingGuest", guest);
-  }
-
   function setInvitationState(stateId) {
     Invitations.update(_id, { $set: { state: stateId } });
   }
@@ -81,7 +77,6 @@ export default withTracker(({ guestId, _id, state }) => {
     states, 
     state: invitationState, 
     dietaryRestrictions,
-    onEditGuestRequested: openGuestEditModal,
     onInvitationStateChange: setInvitationState,
     onGuestNameChange: setGuestName,
     onInvitationRemoved: removeInvitation

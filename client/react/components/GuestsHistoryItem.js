@@ -4,10 +4,11 @@ import PropTypes from 'prop-types';
 import cn from 'classnames';
 import moment from 'moment';
 
-import Guests from '../../../imports/api/Guests';
 import Dinners from '../../../imports/api/Dinners';
 import Invitations from '../../../imports/api/Invitations';
 import InvitationStates from '../../../imports/api/InvitationStates';
+
+import Link from './Link';
 
 class GuestHistoryItem extends React.Component {
   static propTypes = {
@@ -16,11 +17,11 @@ class GuestHistoryItem extends React.Component {
   }
 
   render() {
-    const { invitations, name, lastInvited, onEditGuestRequested } = this.props;
+    const { invitations, name, lastInvited, _id } = this.props;
     const formattedLastInvited = lastInvited && moment(lastInvited).format('dddd MMMM D');
 
     return (
-      <div className="guest-item" onClick={onEditGuestRequested}>
+      <Link to={`/guests/${_id}`} className="guest-item">
         <div className="l-retainer">
           <h3>{name}</h3>
           <ul className="guest-item__history">
@@ -42,7 +43,7 @@ class GuestHistoryItem extends React.Component {
               : "Never invited"}
           </p>
         </div>
-      </div>
+      </Link>
     )
   }
 }
@@ -60,14 +61,8 @@ export default withTracker(({ _id }) => {
     }
   );
 
-  function openGuestEditModal() {
-    const guest = Guests.findOne(_id);
-    return Meteor.openModal("editingGuest", guest);
-  }
-
   return {
     invitations,
-    lastInvited: lastDinner ? lastDinner.date : undefined,
-    onEditGuestRequested: openGuestEditModal,
+    lastInvited: lastDinner ? lastDinner.date : undefined
   }
 })(GuestHistoryItem);
