@@ -1,4 +1,5 @@
 import InvitationStates from '../../imports/api/InvitationStates';
+import _ from 'underscore';
 
 const states = [
   { id: "0", label: 'Invited', expected: true, priority: 0 },

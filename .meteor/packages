@@ -4,14 +4,15 @@
 # but you can also edit it by hand.
 
 # --------- Meteor ---------
-standard-app-packages
+meteor-base@1.4.0             # Packages every Meteor app needs to have
 accounts-base@1.4.3
 accounts-password@1.5.1
-coffeescript
 less@2.8.0
-react
 standard-minifier-css@1.5.2
 standard-minifier-js@2.4.0
+templating
+ecmascript@0.12.0              # Enable ECMAScript2015+ syntax in app code
+underscore
 
 # -------- Unmigrated ----------
 mrt:migrations@0.0.2
@@ -21,7 +22,6 @@ mrt:moment@2.8.1
 mrt:publish-with-relations@0.1.5
 nemo64:bootstrap
 kadira:blaze-layout
-arillo:flow-router-helpers
 react-template-helper
 react-meteor-data
 shell-server@0.4.0
