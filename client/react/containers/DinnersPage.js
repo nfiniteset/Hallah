@@ -1,7 +1,7 @@
 import React from 'react';
 import { withTracker } from 'meteor/react-meteor-data';
 
-import Dinners from '../../../imports/api/Dinners';
+import Dinners from '../../../lib/api/Dinners';
 import DinnerItem from '../components/DinnerItem';
 
 class DinnersPage extends React.Component {

@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import cn from 'classnames';
 import moment from 'moment';
 
-import Dinners from '../../../imports/api/Dinners';
-import Invitations from '../../../imports/api/Invitations';
-import InvitationStates from '../../../imports/api/InvitationStates';
+import Dinners from '../../../lib/api/Dinners';
+import Invitations from '../../../lib/api/Invitations';
+import InvitationStates from '../../../lib/api/InvitationStates';
 
 import Link from './Link';
 

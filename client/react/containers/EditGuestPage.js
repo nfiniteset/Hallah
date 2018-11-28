@@ -1,7 +1,7 @@
 import React from 'react';
 import { withTracker } from 'meteor/react-meteor-data';
 
-import Guests from '../../../imports/api/Guests';
+import Guests from '../../../lib/api/Guests';
 
 import GuestDietaryRestrictionsField from '../components/GuestDietaryRestrictionsField';
 

@@ -3,7 +3,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 
 import CreatableSelect from 'react-select/lib/Creatable';
 
-import DietaryRestrictions from '../../../imports/api/DietaryRestrictions';
+import DietaryRestrictions from '../../../lib/api/DietaryRestrictions';
 
 class GuestDietaryRestrictionsField extends React.Component {
   handleGuestDietaryRestrictionChange = (options) => {

@@ -2,10 +2,10 @@ import React from 'react';
 import cn from 'classnames';
 import { withTracker } from 'meteor/react-meteor-data';
 
-import Guests from '../../../imports/api/Guests';
-import Invitations from '../../../imports/api/Invitations';
-import InvitationStates from '../../../imports/api/InvitationStates';
-import DietaryRestrictions from '../../../imports/api/DietaryRestrictions';
+import Guests from '../../../lib/api/Guests';
+import Invitations from '../../../lib/api/Invitations';
+import InvitationStates from '../../../lib/api/InvitationStates';
+import DietaryRestrictions from '../../../lib/api/DietaryRestrictions';
 
 import DietaryRestrictionsList from './DietaryRestrictionsList';
 import Link from './Link';

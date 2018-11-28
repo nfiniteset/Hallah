@@ -1,8 +1,8 @@
-import Dinners from '../imports/api/Dinners';
-import Guests from '../imports/api/Guests';
-import Invitations from '../imports/api/Invitations';
-import InvitationStates from '../imports/api/InvitationStates';
-import DietaryRestrictions from '../imports/api/DietaryRestrictions';
+import Dinners from '../lib/api/Dinners';
+import Guests from '../lib/api/Guests';
+import Invitations from '../lib/api/Invitations';
+import InvitationStates from '../lib/api/InvitationStates';
+import DietaryRestrictions from '../lib/api/DietaryRestrictions';
 
 Meteor.publish('allDinners', function() {
   return Meteor.publishWithRelations({

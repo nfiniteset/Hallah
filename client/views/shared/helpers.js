@@ -1,4 +1,4 @@
-import InvitationStates from '../../../imports/api/InvitationStates';
+import InvitationStates from '../../../lib/api/InvitationStates';
 
 Handlebars.registerHelper("debug", function(optionalValue) {
   console.log("Current Context");

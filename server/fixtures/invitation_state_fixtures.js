@@ -1,4 +1,4 @@
-import InvitationStates from '../../imports/api/InvitationStates';
+import InvitationStates from '../../lib/api/InvitationStates';
 import _ from 'underscore';
 
 const states = [

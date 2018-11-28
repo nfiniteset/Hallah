@@ -1,7 +1,7 @@
 import React from 'react';
 import { withTracker } from 'meteor/react-meteor-data';
-import Guests from '../../../imports/api/Guests';
-import Invitations from '../../../imports/api/Invitations';
+import Guests from '../../../lib/api/Guests';
+import Invitations from '../../../lib/api/Invitations';
 import CreatableSelect from 'react-select/lib/Creatable';
 
 class InvitationForm extends React.Component {
