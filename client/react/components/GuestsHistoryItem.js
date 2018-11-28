@@ -1,14 +1,13 @@
 import React from 'react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import cn from 'classnames';
 import moment from 'moment';
 
 import Dinners from '../../../lib/api/Dinners';
 import Invitations from '../../../lib/api/Invitations';
-import InvitationStates from '../../../lib/api/InvitationStates';
 
 import Link from './Link';
+import InvitationHistoryMarks from './InvitationHistoryMarks';
 
 class GuestHistoryItem extends React.Component {
   static propTypes = {
@@ -24,19 +23,7 @@ class GuestHistoryItem extends React.Component {
       <Link to={`/guests/${_id}`} className="guest-item">
         <div className="l-retainer">
           <h3>{name}</h3>
-          <ul className="guest-item__history">
-            {invitations.map((invitation) => (
-              <li
-                className={cn(
-                  'guest-item__history-item',
-                  `guest-item__history-item--${InvitationStates.codeFor(invitation.state)}`
-                  )}
-                  key={`${name}-${invitation._id}`}
-                >
-                  |
-              </li>
-            ))}
-          </ul>
+          <InvitationHistoryMarks invitations={invitations} />
           <p>
             {formattedLastInvited
               ? formattedLastInvited

@@ -2,8 +2,12 @@ import React from 'react';
 import { withTracker } from 'meteor/react-meteor-data';
 
 import Guests from '../../../lib/api/Guests';
+import Dinners from '../../../lib/api/Dinners';
+import Invitations from '../../../lib/api/Invitations';
 
 import GuestDietaryRestrictionsField from '../components/GuestDietaryRestrictionsField';
+import DinnerItem from '../components/DinnerItem';
+import InvitationHistoryMarks from '../components/InvitationHistoryMarks';
 
 class EditGuestPage extends React.Component {
   constructor(props) {
@@ -27,19 +31,20 @@ class EditGuestPage extends React.Component {
   }
 
   render() {
-    const { cancel } = this.props;
+    const { cancel, dinners, invitations } = this.props;
 
     return (
       <div className="l-retainer">
         <div className="h-modal__header">
-          <h5>Edit</h5>
+          <InvitationHistoryMarks invitations={invitations} />
         </div>
 
         <form className="form" onSubmit={this.handleSubmit}>
-          <div className="form-group h-modal__body">
-            <input value={this.state.name} onChange={this.handleNameChange} />
+          <div className="form-group">
+            <label htmlFor="guest-name" className="sr-only">Name</label>
+            <input id="guest-name" value={this.state.name} onChange={this.handleNameChange} />
           </div>
-          <div className="form-group h-modal__body">
+          <div className="form-group">
             <GuestDietaryRestrictionsField
               onChange={this.handleGuestDietaryRestrictionChange}
               guestDietaryRestrictionIds={this.state.dietaryRestrictionIds}
@@ -65,6 +70,11 @@ class EditGuestPage extends React.Component {
             </li>
           </ul>
         </form>
+        <ul className="dinners-past-list">
+          {dinners.map(dinner => (
+            <DinnerItem key={dinner._id} {...dinner} />
+          ))}
+        </ul>
       </div>
     );
   }
@@ -73,6 +83,8 @@ class EditGuestPage extends React.Component {
 export default withTracker(({ match }) => {
   const { _id } = match.params;
   const guest = Guests.findOne({ _id });
+  const invitations = Invitations.find({ guestId: _id }).fetch();
+  const dinners = Dinners.find({ _id: { $in: invitations.map(i => i.dinnerId )}}, { sort: { "date": -1 } }).fetch();
 
   function setGuestDietaryRestrictions(dietaryRestrictionIds) {
     Guests.update(_id, { $set: { dietaryRestrictionIds } });
@@ -90,6 +102,8 @@ export default withTracker(({ match }) => {
   return {
     guest,
     setGuestDietaryRestrictions,
+    invitations,
+    dinners,
     save: updateGuest
   }
 })(EditGuestPage);
