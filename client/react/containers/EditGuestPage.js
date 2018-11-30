@@ -80,7 +80,7 @@ class EditGuestPage extends React.Component {
   }
 }
 
-export default withTracker(({ match }) => {
+export default withTracker(({ match, history }) => {
   const { _id } = match.params;
   const guest = Guests.findOne({ _id });
   const invitations = Invitations.find({ guestId: _id }).fetch();
@@ -97,6 +97,11 @@ export default withTracker(({ match }) => {
         name: guestAttrs.name
       }
     });
+    history.goBack();
+  }
+
+  function cancel() {
+    history.goBack();
   }
 
   return {
@@ -104,6 +109,7 @@ export default withTracker(({ match }) => {
     setGuestDietaryRestrictions,
     invitations,
     dinners,
-    save: updateGuest
+    save: updateGuest,
+    cancel
   }
 })(EditGuestPage);
