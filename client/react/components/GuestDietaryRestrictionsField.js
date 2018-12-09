@@ -6,8 +6,14 @@ import CreatableSelect from 'react-select/lib/Creatable';
 import DietaryRestrictions from '../../../lib/api/DietaryRestrictions';
 
 class GuestDietaryRestrictionsField extends React.Component {
-  handleGuestDietaryRestrictionChange = (options) => {
-    this.props.onChange(options.map(o => o.value));
+  handleGuestDietaryRestrictionChange = (options, { action }) => {
+    console.log(options, action);
+    if (action === 'create-option') {
+      const label = options.find(o => o.__isNew__).label;
+      this.props.createDietaryRestriction({ label });
+    } else {
+      this.props.onChange(options.map(o => o.value));
+    }
   }
 
   render() {
@@ -32,12 +38,14 @@ class GuestDietaryRestrictionsField extends React.Component {
   }
 }
 
-export default withTracker(({ guestDietaryRestrictionIds }) => {
+export default withTracker(({ guestDietaryRestrictionIds, createDietaryRestriction }) => {
   const dietaryRestrictions = DietaryRestrictions.find().fetch();
   const guestDietaryRestrictions = DietaryRestrictions.find({ _id: { $in: guestDietaryRestrictionIds }}).fetch();
 
+
   return {
     dietaryRestrictions,
-    guestDietaryRestrictions
+    guestDietaryRestrictions,
+    createDietaryRestriction
   }
 })(GuestDietaryRestrictionsField);

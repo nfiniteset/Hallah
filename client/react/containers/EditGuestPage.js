@@ -19,7 +19,7 @@ class EditGuestPage extends React.Component {
   }
 
   handleGuestDietaryRestrictionChange = (dietaryRestrictionIds) => {
-    this.setState({ dietaryRestrictionIds })
+    this.setState({ dietaryRestrictionIds });
   }
 
   handleNameChange = (event) => {
@@ -28,6 +28,16 @@ class EditGuestPage extends React.Component {
 
   handleSubmit = () => {
     this.props.save(this.state);
+  }
+
+  handleCreateDietaryRestriction = (params) => {
+    this.props.createDietaryRestriction(params, (error, id) => {
+      if (error) {
+        return console.error(error.reason);
+      } else {
+        this.setState({ dietaryRestrictionIds: this.state.dietaryRestrictionIds.concat(id) });
+      }
+    });
   }
 
   render() {
@@ -48,6 +58,7 @@ class EditGuestPage extends React.Component {
             <GuestDietaryRestrictionsField
               onChange={this.handleGuestDietaryRestrictionChange}
               guestDietaryRestrictionIds={this.state.dietaryRestrictionIds}
+              createDietaryRestriction={this.handleCreateDietaryRestriction}
             />
           </div>
 
@@ -86,8 +97,8 @@ export default withTracker(({ match, history }) => {
   const invitations = Invitations.find({ guestId: _id }).fetch();
   const dinners = Dinners.find({ _id: { $in: invitations.map(i => i.dinnerId )}}, { sort: { "date": -1 } }).fetch();
 
-  function setGuestDietaryRestrictions(dietaryRestrictionIds) {
-    Guests.update(_id, { $set: { dietaryRestrictionIds } });
+  function createDietaryRestriction(params, callback) {
+    Meteor.call('createDietaryRestriction', params, callback);
   }
 
   function updateGuest(guestAttrs) {
@@ -106,9 +117,9 @@ export default withTracker(({ match, history }) => {
 
   return {
     guest,
-    setGuestDietaryRestrictions,
     invitations,
     dinners,
+    createDietaryRestriction,
     save: updateGuest,
     cancel
   }
